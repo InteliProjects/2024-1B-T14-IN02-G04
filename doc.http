@@ -1,0 +1,45 @@
+# Cria um formulário resenha respondido (POST /userForms)
+POST http://localhost:1337/userForms
+Content-Type: application/json
+
+{
+  "id": "002",
+  "idade": 25,
+  "gênero": "Masculino",
+  "educação": "Ensino Superior Completo",
+  "tipo de residência": "Apartamento",
+  "família": "Casado, 2 filhos",
+  "renda familiar": "R$ 5.000,00",
+  "membros da família": "4 pessoas",
+  "país": "Brasil",
+  "estado": "São Paulo",
+  "cidade": "São Paulo",
+  "bairro": "Centro",
+  "relações com cães": "Gosta muito"
+}
+
+# Lista todas as respostas do formulário resenha (GET /userForms)
+GET http://localhost:1337/userForms
+
+# Atualiza um userForms (PUT /userForms/:id)
+PUT http://localhost:1337/userForms/5
+Content-Type: application/json
+
+{
+  "id": "002",
+  "idade": 25,
+  "gênero": "Masculino",
+  "educação": "Ensino Superior Completo",
+  "tipo de residência": "Apartamento",
+  "família": "Casado, 2 filhos",
+  "renda familiar": "R$ 5.000,00",
+  "membros da família": "4 pessoas",
+  "país": "Brasil",
+  "estado": "São Paulo",
+  "cidade": "São Paulo",
+  "bairro": "Centro",
+  "relações com cães": "Gosta muito"
+}
+
+# Remove um aluno (DELETE /userForms/:id)
+DELETE http://localhost:1337/aluno/5

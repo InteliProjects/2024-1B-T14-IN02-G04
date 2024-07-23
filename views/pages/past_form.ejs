@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/styles/past_form.css" rel="stylesheet" />
+    <title>Formulário Multipáginas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(150deg, #6f73d2 50%, #ffffff 100%);
+            background-attachment: fixed; /* Fixa a imagem de fundo */
+        }
+
+        .main {
+            max-width: 600px;
+            margin: 40px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-page {
+            display: none;
+        }
+
+        .form-page.active {
+            display: block;
+        }
+
+        .main_answer_box {
+            margin-bottom: 20px;
+        }
+
+        .input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .main_footer {
+            display: flex;
+            justify-content: right;
+            align-items: center;
+            margin-top: 20px;
+            flex-direction: column;
+        }
+
+        .btn-group {
+            display: flex;
+            justify-content: left;
+            gap: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="progress" role="progressbar" aria-label="Progress" aria-valuenow="25" aria-valuemin="0"
+        aria-valuemax="100" style="height: 5px">
+        <div class="progress-bar" style="width: 50%"></div>
+    </div>
+
+    <div class="main">
+        <div class="main_alert">
+            <div class="alert alert-primary" role="alert">
+                Esse formulário é para coleta de informações sobre seu pet.
+            </div>
+        </div>
+
+        <form id="pet-form">
+            <!-- Página 0 -->
+            <div id="page-0" class="form-page active">
+                <div class="main_question">
+                    <label for="name">Qual o nome do cachorro?</label>
+                </div>
+                <div class="main_answer_box">
+                    <div class="wave-group">
+                        <input required id="name" name="name" type="text" class="input">
+                        <span class="bar"></span>
+                    </div>
+                </div>
+
+                <div class="main_question">
+                    <label for="who_chose_name">Quem esteve envolvido na decisão do nome do cachorro?</label>
+                </div>
+                <div class="main_answer_box">
+                    <div class="wave-group">
+                        <input required id="who_chose_name" name="who_chose_name" type="text" class="input">
+                        <span class="bar"></span>
+                    </div>
+                </div>
+
+                <div class="main_question">
+                    <label>Foi seu primeiro cão?</label>
+                </div>
+                <div class="main_answer_box">
+                    <div class="wave-group">
+                        <input class="form-check-input" type="radio" id="is_first_yes" name="is_first" value="Sim">
+                        <label for="is_first_yes">Sim</label>
+                        <br>
+                        <input class="form-check-input" type="radio" id="is_first_no" name="is_first" value="Não">
+                        <label for="is_first_no">Não</label>
+                    </div>
+                </div>
+
+                <div class="main_question">
+                    <label>Pertenceu a:</label>
+                </div>
+                <div class="main_answer_box">
+                    <div class="wave-group">
+                        <input class="form-check-input" type="radio" id="owner_you" name="owner" value="Você">
+                        <label for="owner_you">Você</label>
+                        <br>
+                        <input class="form-check-input" type="radio" id="owner_other" name="owner" value="Outro membro da família">
+                        <label for="owner_other">Outro membro da família</label>
+                        <input type="text" placeholder="Quem?" class="input" id="other_owner">
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Página 1 -->
+            <div id="page-1" class="form-page">
+                <div class="main_question">
+                    <label>Ele esteve com você durante quanto tempo?(meses)</label>
+                </div>
+                <div class="main_answer_box">
+                    <div class="wave-group">
+                        <input type="number" id="how_long_with" name="how_long_with" class="input" required>
+                    </div>
+                </div>
+
+                <div class="main_question">
+                    <label>Tinham outros pets na casa?</label>
+                </div>
+                <div class="main_answer_box">
+                    <div class="wave-group">
+                        <input class="form-check-input" type="radio" id="other_pets_no" name="other_pets" value="Não">
+                        <label for="other_pets_no">Não</label>
+                        <br>
+                        <input class="form-check-input" type="radio" id="other_pets_yes" name="other_pets" value="Sim">
+                        <label for="other_pets_yes">Sim</label>
+                        <br>
+                        <label>Quantos?</label>
+                        <br>
+                        <input type="number" placeholder="Cachorros" id="num_dogs" name="num_dogs" class="input">
+                        <input type="number" placeholder="Gatos" id="num_cats" name="num_cats" class="input">
+                        <input type="number" placeholder="Outros" id="num_other" name="num_other" class="input">
+                    </div>
+                </div>
+
+                <div class="main_question">
+                    <label>Quantos anos tinha seu Pet ao ser incluído na casa?</label>
+                </div>
+                <div class="main_answer_box">
+                    <div class="wave-group">
+                        <input class="form-check-input" type="radio" id="age_1" name="age_got" value="Menos de 3 meses">
+                        <label for="age_1">Menos de 3 meses</label>
+                        <br>
+                        <input class="form-check-input" type="radio" id="age_2" name="age_got" value="3 a 6 meses">
+                        <label for="age_2">3 a 6 meses</label>
+                        <br>
+                        <input class="form-check-input" type="radio" id="age_3" name="age_got" value="6 a 9 meses">
+                        <label for="age_3">6 a 9 meses</label>
+                        <br>
+                        <input class="form-check-input" type="radio" id="age_4" name="age_got" value="9 a 12 meses">
+                        <label for="age_4">9 a 12 meses</label>
+                        <br>
+                        <input class="form-check-input" type="radio" id="age_5" name="age_got" value="1 a 2 anos">
+                        <label for="age_5">1 a 2 anos</label>
+                        <br>
+                        <input class="form-check-input" type="radio" id="age_6" name="age_got" value="2 anos ou mais">
+                        <label for="age_6">2 anos ou mais</label>
+                        <br>
+                        <input class="form-check-input" type="radio" id="age_7" name="age_got" value="Não sei">
+                        <label for="age_7">Não sei</label>
+                    </div>
+                </div>
+
+                <div class="main_question">
+                    <label>Como você descreve a personalidade desse cão?</label>
+                </div>
+                <div class="main_answer_box">
+                    <div class="wave-group">
+                        <input type="text" id="personality" name="personality" required class="input">
+                        <span class="bar"></span>
+                    </div>
+                </div>
+
+                <div class="main_question">
+                    <label>Ele era castrado?</label>
+                </div>
+                <div class="main_answer_box">
+                    <div class="wave-group">
+                        <input class="form-check-input" type="radio" id="neutered_yes" name="neutered" value="Sim">
+                        <label for="neutered_yes">Sim</label>
+                        <br>
+                        <input class="form-check-input" type="radio" id="neutered_no" name="neutered" value="Não">
+                        <label for="neutered_no">Não</label>
+                    </div>
+                    <div class="main_question">
+                        <label>Quantos meses ele(a) tinha aproximadamente ao ser castrado?</label>
+                    </div>
+                    <div class="main_answer_box">
+                        <div class="wave-group">
+                            <input id="months_neutered" name="months_neutered" type="number" class="input">
+                            <span class="bar"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Página 2 -->
+            <div id="page-2" class="form-page">
+                <div class="main_question">
+                    <label>Raça do pet</label>
+                </div>
+                <div class="main_answer_box">
+                    <div class="wave-group">
+                        <input class="form-check-input" type="radio" id="breed_1" name="breed" value="Não sei">
+                        <label for="breed_1">Não sei</label>
+                        <br>
+                        <input class="form-check-input" type="radio" id="breed_2" name="breed" value="Sem raça definida">
+                        <label for="breed_2">Sem raça definida</label>
+                        <br>
+                        <input class="form-check-input" type="radio" id="breed_3" name="breed" value="Mistura de raças">
+                        <label for="breed_3">Mistura de raças</label>
+                        <br>
+                        <input class="form-check-input" type="radio" id="breed_4" name="breed" value="Raça definida">
+                        <label for="breed_4">Raça definida</label>
+                        <br>
+                        <input  type="text" id="which_breed" name="which_breed" placeholder="Qual?" class="input">
+                    </div>
+                </div>
+
+                <div class="main_question">
+                    <label>De onde veio o cachorro?</label>
+                </div>
+                <div class="main_answer_box">
+                    <div class="wave-group">
+                        <input class="form-check-input" type="radio" id="where_got_1" name="where_got" value="Criador">
+                        <label for="where_got_1">Criador</label>
+                        <br>
+                        <input class="form-check-input" type="radio" id="where_got_2" name="where_got" value="Amigo">
+                        <label for="where_got_2">Amigo</label>
+                        <br>
+                        <input class="form-check-input" type="radio" id="where_got_3" name="where_got" value="Abrigo">
+                        <label for="where_got_3">Abrigo</label>
+                        <br>
+                        <input class="form-check-input" type="radio" id="where_got_4" name="where_got" value="Vizinho">
+                        <label for="where_got_4">Vizinho</label>
+                        <br>
+                        <input class="form-check-input" type="radio" id="where_got_5" name="where_got" value="Nascido em casa">
+                        <label for="where_got_5">Nascido em casa</label>
+                        <br>
+                        <input class="form-check-input" type="radio" id="where_got_6" name="where_got" value="Encontrado como perdido">
+                        <label for="where_got_6">Encontrado como perdido</label>
+                        <br>
+                        <input class="form-check-input" type="radio" id="where_got_7" name="where_got" value="Loja de animais">
+                        <label for="where_got_7">Loja de animais</label>
+                        <br>
+                        <input class="form-check-input" type="radio" id="where_got_8" name="where_got" value="On-line">
+                        <label for="where_got_8">On-line</label>
+                        <br>
+                        <input class="form-check-input" type="radio" id="where_got_9" name="where_got" value="Outro">
+                        <label for="where_got_9">Outro</label>
+                        <br>
+                        <input type="text" id="other_where_got" name="other_where_got" placeholder="Qual?" class="input">
+                    </div>
+                </div>
+
+
+                <div class="main_question">
+                    <label>Qual o valor pago pelo pet?</label>
+                </div>
+                <div class="main_answer_box">
+                    <div class="wave-group">
+                        <input class="form-check-input" type="radio" id="price_1" name="price" value="Sem custo">
+                        <label for="price_1">Sem custo</label>
+                        <br>
+                        <input class="form-check-input" type="radio" id="price_2" name="price" value="R$ 50,00 a R$ 150,00">
+                        <label for="price_2">R$ 50,00 a R$ 150,00</label>
+                        <br>
+                        <input class="form-check-input" type="radio" id="price_3" name="price" value="R$ 150,00 a R$ 300,00">
+                        <label for="price_3">R$ 150,00 a R$ 300,00</label>
+                        <br>
+                        <input class="form-check-input" type="radio" id="price_4" name="price" value="R$ 300,00 a R$ 500,00">
+                        <label for="price_4">R$ 300,00 a R$ 500,00</label>
+                        <br>
+                        <input class="form-check-input" type="radio" id="price_5" name="price" value="R$ 500,00 a R$ 1000,00">
+                        <label for="price_5">R$ 500,00 a R$ 1000,00</label>
+                        <br>
+                        <input class="form-check-input" type="radio" id="price_6" name="price" value="R$ 1000,00 a R$ 2000,00">
+                        <label for="price_6">R$ 1000,00 a R$ 2000,00</label>
+                        <br>
+                        <input class="form-check-input" type="radio" id="price_7" name="price" value="R$ 2000,00 a R$ 4000,00">
+                        <label for="price_7">R$ 2000,00 a R$ 4000,00</label>
+                        <br>
+                        <input class="form-check-input" type="radio" id="price_8" name="price" value="R$ 4000,00 a R$ 5000,00">
+                        <label for="price_8">R$ 4000,00 a R$ 5000,00</label>
+                        <br>
+                        <input class="form-check-input" type="radio" id="price_9" name="price" value="R$ 5000,00 ou mais">
+                        <label for="price_9">R$ 5000,00 ou mais</label>
+                        <br>
+                        <input class="form-check-input" type="radio" id="price_10" name="price" value="Não sei">
+                        <label for="price_10">Não sei</label>
+                    </div>
+                </div>
+
+                <div class="main_question">
+                    <label>Por que você comprou, adotou ou incluiu?</label>
+                </div>
+                <div class="main_answer_box">
+                    <div class="wave-group">
+                        <input type="checkbox" id="reason_1" name="reason" value="Companhia para crianças">
+                        <label for="reason_1">Companhia para crianças</label>
+                        <br>
+                        <input type="checkbox" id="reason_2" name="reason" value="Acompanhamento para adulto(s)">
+                        <label for="reason_2">Acompanhamento para adulto(s)</label>
+                        <br>
+                        <input type="checkbox" id="reason_3" name="reason" value="Por sua aparência">
+                        <label for="reason_3">Por sua aparência</label>
+                        <br>
+                        <input type="checkbox" id="reason_4" name="reason"
+                            value="Companhia para um cachorro que já morava na casa">
+                        <label for="reason_4">Companhia para um cachorro que já morava na casa</label>
+                        <br>
+                        <input type="checkbox" id="reason_5" name="reason" value="Ensinar responsabilidade às crianças">
+                        <label for="reason_5">Ensinar responsabilidade às crianças</label>
+                        <br>
+                        <input type="checkbox" id="reason_6" name="reason" value="Porque amigos já tinham">
+                        <label for="reason_6">Porque amigos já tinham</label>
+                        <br>
+                        <input type="checkbox" id="reason_7" name="reason"
+                            value="Para proteção da residência, de pessoas">
+                        <label for="reason_7">Para proteção da residência, de pessoas</label>
+                        <br>
+                        <input type="checkbox" id="reason_8" name="reason"
+                            value="Para ajudar um amigo/conhecido que não conseguiu ficar com o cachorro">
+                        <label for="reason_8">Para ajudar um amigo/conhecido que não conseguiu ficar com o
+                            cachorro</label>
+                        <br>
+                        <input type="checkbox" id="reason_9" name="reason" value="Para salvar sua vida">
+                        <label for="reason_9">Para salvar sua vida</label>
+                        <br>
+                        <input type="checkbox" id="reason_10" name="reason"
+                            value="Ele/ela era fofo e estava disponível ou foi um encantamento imediato">
+                        <label for="reason_10">Ele/ela era fofo e estava disponível ou foi um encantamento
+                            imediato</label>
+                        <br>
+                        <input type="checkbox" id="reason_11" name="reason" value="Ele/ela foi um presente">
+                        <label for="reason_11">Ele/ela foi um presente</label>
+                        <br>
+                        <input type="checkbox" id="reason_12" name="reason" value="Outros">
+                        <label for="reason_12">Outros</label>
+                        <br>
+                        <input type="text" id="other_reason" name="other_reason" placeholder="Qual?" class="input">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Página 3 -->
+            <div id="page-3" class="form-page">
+                <div class="main_question">
+                    <label>Quais características que o Pet tinha que o levaram a selecioná-lo ou concordar em
+                        mantê-lo</label>
+                </div>
+                <div class="main_answer_box">
+                    <div class="wave-group">
+                        <input required id="characteristics_keep" name="characteristics_keep" type="text" class="input">
+                        <span class="bar"></span>
+                    </div>
+                </div>
+
+                <div class="main_question">
+                    <label>Pensando nas primeiras semanas depois da inclusão o que você gostava mais nele/ela?</label>
+                </div>
+                <div class="main_answer_box">
+                    <div class="wave-group">
+                        <input required id="what_liked_most" name="what_liked_most" type="text" class="input">
+                        <span class="bar"></span>
+                    </div>
+                </div>
+
+                <div class="main_question">
+                    <label>O que você não gostava nele (a)?</label>
+                </div>
+                <div class="main_answer_box">
+                    <div class="wave-group">
+                        <input required id="didnt_like" name="didnt_like" type="text" class="input">
+                        <span class="bar"></span>
+                    </div>
+                </div>
+
+                <div class="main_question">
+                    <label>O Pet foi ao veterinário enquanto esteve com você?</label>
+                </div>
+                <div class="main_answer_box">
+                    <div class="wave-group">
+                        <input class="form-check-input" type="radio" id="vet_yes" name="vet" value="Sim">
+                        <label for="vet_yes">Sim</label>
+                        <br>
+                        <input class="form-check-input" type="radio" id="vet_no" name="vet" value="Não">
+                        <label for="vet_no">Não</label>
+                    </div>
+                </div>
+                <div class="main_question">
+                    <label>Quantas vezes?</label>
+                </div>
+                <div class="main_answer_box">
+                    <div class="wave-group">
+                        <input id="vet_times" name="vet_times" type="number" class="input">
+                        <span class="bar"></span>
+                    </div>
+                </div>
+
+                <div class="main_question">
+                    <label>Por quê?</label>
+                </div>
+                <div class="main_answer_box">
+                    <div class="wave-group">
+                        <input id="vet_reasons" name="vet_reasons" type="text" class="input">
+                        <span class="bar"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Página 4 -->
+            <div id="page-4" class="form-page">
+                <div class="main_question">
+                    <label>Qual a data em que você deixou de conviver com ele?</label>
+                </div>
+                <div class="main_answer_box">
+                    <div class="wave-group">
+                        <input required id="stop_living_with" name="stop_living_with" type="text" class="input">
+                        <span class="bar"></span>
+                    </div>
+                </div>
+
+                <div class="main_question">
+                    <label>Qual a idade dele na época?(meses)</label>
+                </div>
+                <div class="main_answer_box">
+                    <div class="wave-group">
+                        <input type="number" id="age_at_time" name="age_at_time" class="input" required>
+                    </div>
+                </div>
+
+                <div class="main_question">
+                    <label>Por quais motivos deixou de conviver com ele?</label>
+                </div>
+                <div class="main_answer_box">
+                    <div class="wave-group">
+                        <input required id="why_stopped" name="why_stopped" type="text" class="input">
+                        <span class="bar"></span>
+                    </div>
+                </div>
+
+                <div class="main_question">
+                    <label>Você conviveria com um novo cão?</label>
+                </div>
+                <div class="main_answer_box">
+                    <div class="wave-group">
+                        <input class="form-check-input" type="radio" id="another_dog_yes" name="another_dog" value="Sim">
+                        <label for="another_dog_yes">Sim</label>
+                        <br>
+                        <input class="form-check-input" type="radio" id="another_dog_no" name="another_dog" value="Não">
+                        <label for="another_dog_no">Não</label>
+                        <br>
+                        <input type="text" id="why_another_dog" name="why_another_dog" placeholder="Por quê?" class="input" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="btn-group">
+                <button type="button" id="prevBtn" class="btn btn-secondary" style="border-radius: 14px;">Anterior</button>
+                <button type="button" id="nextBtn" class="btn btn-primary" style="border-radius: 14px;">Próximo</button>
+                <button type="submit" id="okBtn" class="btn btn-success" style="display:none; border-radius: 14px;">Enviar</button> 
+            </div>
+        </form>
+    </div>
+
+    <script>
+
+        // Adiciona um ouvinte para o evento 'DOMContentLoaded'
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // Funções para troca de páginas do formulário
+            let currentPage = 0;
+            const pages = document.querySelectorAll('.form-page');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const okBtn = document.getElementById('okBtn');
+            const petForm = document.getElementById('pet-form');
+
+            function showPage(page) {
+                pages.forEach((pageElement, index) => {
+                    pageElement.classList.toggle('active', index === page);
+                });
+
+                prevBtn.style.display = page === 0 ? 'none' : 'block';
+                nextBtn.style.display = page === pages.length - 1 ? 'none' : 'block';
+                okBtn.style.display = page === pages.length - 1 ? 'block' : 'none';
+            }
+
+            function changePage(direction) {
+                if (currentPage + direction >= 0 && currentPage + direction < pages.length) {
+                    currentPage += direction;
+                    showPage(currentPage);
+                }
+            }
+
+            // Adiciona ação aos botões
+            prevBtn.addEventListener('click', () => changePage(-1));
+            nextBtn.addEventListener('click', () => changePage(1));
+
+            // Funções auxiliares para a integração com o backend
+            function getElementValue(id) {
+                const element = document.getElementById(id);
+                return element ? element.value : '';
+            }
+
+            function getNumberValue(id) {
+                const element = document.getElementById(id);
+                return element ? element.value || 0 : 0;
+            }
+
+            function getCheckedRadioValue(name) {
+                const options = document.getElementsByName(name);
+                for (let i = 0; i < options.length; i++) {
+                    if (options[i].checked) {
+                        return options[i].value;
+                    }
+                }
+                return null;
+            }
+
+            function isCheckedRadioValue(name, value) {
+                return getCheckedRadioValue(name) === value;
+            }
+
+            function checkboxSave(name) {
+                let options = document.getElementsByName(name);
+                let checkedValues = [];
+                for (let i = 0; i < options.length; i++) {
+                    if (options[i].checked) {
+                        checkedValues.push(options[i].value);
+                    }
+                }
+                return checkedValues;
+            }
+
+            // Função de submit do form
+            async function submitForm(event) {
+                event.preventDefault();
+
+                const formData = {
+                    id: 'x',
+                    name: getElementValue('name'),
+                    personality: getElementValue('personality'),
+                    owner: getCheckedRadioValue('owner'),
+                    other_owner: getElementValue('other_owner'),
+                    how_long_with: getElementValue('how_long_with'),
+                    is_first: isCheckedRadioValue('is_first', 'Sim'),
+                    age_got: getCheckedRadioValue('age_got'),
+                    neutered: isCheckedRadioValue('neutered', 'Sim'),
+                    months_neutered: getElementValue('months_neutered'),
+                    breed: getCheckedRadioValue('breed'),
+                    where_got: getCheckedRadioValue('where_got'),
+                    other_got: getElementValue('other_where_got'),
+                    price: getCheckedRadioValue('price'),
+                    characteristics_keep: getElementValue('characteristics_keep'),
+                    who_chose_name: getElementValue('who_chose_name'),
+                    what_liked_most: getElementValue('what_liked_most'),
+                    didnt_like: getElementValue('didnt_like'),
+                    vet: isCheckedRadioValue('vet', 'Sim'),
+                    vet_times: getNumberValue('vet_times'),
+                    vet_reasons: getElementValue('vet_reasons'),
+                    stop_living_with: getElementValue('stop_living_with'),
+                    age_at_time: getNumberValue('age_at_time'),
+                    why_stopped: getElementValue('why_stopped'),
+                    another_dog: isCheckedRadioValue('another_dog', 'Sim'),
+                    why: getElementValue('another_dog_why')
+                };
+
+                if (isCheckedRadioValue('other_pets', 'Sim')) {
+                    let idOtherPets;
+                    try {
+                        const res = await fetch('/otherPet', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                authorization: localStorage.getItem('user')
+                            },
+                            body: JSON.stringify({
+                                id: "x",
+                                cats: getNumberValue('num_cats'),
+                                dogs: getNumberValue('num_dogs'),
+                                other: getNumberValue('num_other')
+                            })
+                        });
+
+                        const data = await res.json();
+                        idOtherPets = data.id;
+                    } catch (err) {
+                        console.error(err);
+                    }
+
+                    formData.id_other_pet = idOtherPets;
+                }
+
+                const reasons = checkboxSave('reason');
+                var idWhyHaveDog;
+
+                try {
+                    const reasonData = {
+                        id: "x",
+                        child_company: reasons.includes('child_company'),
+                        adult_company: reasons.includes('adult_company'),
+                        appearance: reasons.includes('appearance'),
+                        dog_company: reasons.includes('dog_company'),
+                        teach_responsibility: reasons.includes('teach_responsibility'),
+                        friends: reasons.includes('friends'),
+                        protection: reasons.includes('protection'),
+                        help_old_owner: reasons.includes('help_old_owner'),
+                        save_life: reasons.includes('save_life'),
+                        cuteness: reasons.includes('cuteness'),
+                        he_chose_me: reasons.includes('he_chose_me'),
+                        other: getElementValue('other_reason')
+                    };
+
+                    console.log('Submitting reasons:', reasonData); // Debug log
+
+                    // Envia a requisição para o backend
+                    const r = await fetch('/whyDog', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            authorization: localStorage.getItem('user')
+                        },
+                        body: JSON.stringify(reasonData)
+                    });
+
+                    const data = await r.json();
+                    console.log('Response from /whyDog:', data); // Debug log
+                    idWhyHaveDog = data.id;
+                } catch (err) {
+                    console.error('Error in /whyDog request:', err);
+                }
+
+                formData.id_why_dog = idWhyHaveDog;
+
+                try {
+                    // Envia requisição para o backend
+                    const response = await fetch('/had_dog_form/create', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            Authorization: localStorage.getItem('user')
+                        },
+                        body: JSON.stringify(formData)
+                    });
+
+                    ///const data = await response.json();
+
+                    if (response.ok) {
+                        window.location.href = '/end';
+                    } else {
+                        console.error('Error:', data);
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                }
+            }
+
+            // Adiciona enento submit no form
+            petForm.addEventListener('submit', submitForm);
+
+            showPage(currentPage);
+        });
+
+    </script>
+
+</body>
+
+</html>

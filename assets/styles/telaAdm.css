@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f0f4f8;
+  color: #333;
+}
+
+.admin {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.admin_header {
+  background-color: #6f73d2;
+  padding: 20px;
+  text-align: center;
+  color: #fff;
+}
+
+.title-tela {
+  margin: 0;
+  font-size: 2em;
+  font-weight: 600;
+}
+
+.admin_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  padding: 20px;
+  background-color: #ffffff;
+  margin: 50px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#chart-year {
+  width: 100%;
+  max-width: 800px;
+  margin: 20px 0;
+}
+
+.admin_button {
+  font-size: 16px;
+  background-color: #4246a2;
+  cursor: pointer;
+}
+
+.admin_button:hover {
+  background-color: #4246a2;
+}
+
+.admin_footer {
+  padding: 20px;
+  text-align: center;
+  background-color: #6f73d2;
+  color: #fff;
+}

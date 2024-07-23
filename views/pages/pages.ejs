@@ -1,0 +1,357 @@
+<div class="container mt-5">
+    <h1 class="mb-4">Sails.js API Documentation</h1>
+
+    <p>Esta é a documentação dos endpoints da API Sails.js utilizada neste projeto.</p>
+
+    <!--Aqui estão todos os end points da aplicação-->
+    <h2>Endpoints</h2>
+    <h3>POST /authLogin</h3>
+    <p>Este endpoint faz a verificação das credenciais passadas através do corpo da requisição no Firebase.</p>
+    <h3>POST /authCadastro</h3>
+    <p>Este endpoint cria um usuário com os dados fornecidos no corpo da requisição no Firebase.</p>
+    <h3>POST /userForms</h3>
+    <p>Este endpoint cria um user_form no banco de dados, com os dados fornecidos no corpo da requisição.</p>
+    <h3>GET /userForms/:id</h3>
+    <p>Este endpoint retorna os dados de uma coluna específica da tabela user_forms, através do I…
+        [14:21, 09/06/2024] Flakas:
+    <div class="container mt-5">
+        <h1 class="mb-4">Sails.js API Documentation</h1>
+
+        <p>Esta é a documentação dos endpoints da API Sails.js utilizada neste projeto.</p>
+
+        <!--Aqui estão todos os end points da aplicação-->
+        <h2>Endpoints</h2>
+        <h3>POST /authLogin</h3>
+        <p>Este endpoint faz a verificação das credenciais passadas através do corpo da requisição no Firebase.</p>
+        <h3>POST /authCadastro</h3>
+        <p>Este endpoint cria um usuário com os dados fornecidos no corpo da requisição no Firebase.</p>
+        <h3>POST /userForms</h3>
+        <p>Este endpoint cria um user_form no banco de dados, com os dados fornecidos no corpo da requisição.</p>
+        <h3>GET /userForms/:id</h3>
+        <p>Este endpoint retorna os dados de uma coluna específica da tabela user_forms, através do ID fornecido na URL.
+        </p>
+        <h3>GET /userForms</h3>
+        <p>Este endpoint retorna todas as colunas da tabela user_forms.</p>
+        <h3>DELETE /userForms/:id</h3>
+        <p>Este endpoint deleta um usuário específico com o ID passado na URL.</p>
+        <h3>PUT /userForms/:id</h3>
+        <p>Este endpoint atualiza os dados de um usuário específico com o ID passado na URL.</p>
+        <h3>POST /users</h3>
+        <p>Este endpoint cria um usuário novo no banco de dados com os parâmetros passados no corpo da requisição.</p>
+        <h3>GET /users</h3>
+        <p>Este endpoint retorna todos os usuários do banco de dados.</p>
+        <h3>GET /users/:id</h3>
+        <p>Este endpoint retorna os dados de um usuário específico com o ID passado na URL.</p>
+        <h3>PUT /users/password/:id/:password</h3>
+        <p>Este endpoint atualiza a senha de um usuário específico com o ID passado na URL.</p>
+        <h3>POST /contact/:id_users</h3>
+        <p>Este endpoint cria um contato no banco de dados relacionado ao usuário através do ID passado na URL.</p>
+        <h3>GET /contact</h3>
+        <p>Este endpoint retorna todos os contatos do banco de dados.</p>
+        <h3>GET contact/id/:id</h3>
+        <p>Este endpoint retorna os dados de um contato específico com o ID passado na URL.</p>
+        <h3>PUT contact/:id_users</h3>
+        <p>Este endpoint atualiza os dados de um contato específico com o ID passado na URL.</p>
+        <h3>POST /has_dog_form</h3>
+        <p>Este endpoint cria um has_dog_form no banco de dados, com os dados fornecidos no corpo da requisição.</p>
+        <h3>GET /has_dog_form/getAll</h3>
+        <p>Este endpoint retorna todos os has_dog_form do banco de dados.</p>
+        <h3>GET /has_dog_form/getById/:id</h3>
+        <p>Este endpoint retorna os dados de um has_dog_form específico com o ID passado na URL.</p>
+        <h3>PUT /has_dog_form/update/:id</h3>
+        <p>Este endpoint atualiza as informações do formulário de um usuário específico com o ID passado na URL.</p>
+        <h3>POST /had_dog_form/create</h3>
+        <p>Este endpoint cria um had_dog_form no banco de dados, com os dados fornecidos no corpo da requisição.</p>
+        <h3>GET /had_dog_form/getAll</h3>
+        <p>Este endpoint retorna todos os had_dog_form do banco de dados.</p>
+        <h3>GET /had_dog_form/getById/:id</h3>
+        <p>Este endpoint retorna os dados de um had_dog_form específico com o ID passado na URL.</p>
+        <h3>PUT /had_dog_form/update/:id</h3>
+        <p>Este endpoint atualiza as informações do formulário de um usuário específico com o ID passado na URL.</p>
+        <h3>POST /dontWantForm/create</h3>
+        <p>Este endpoint cria um dontWantForm no banco de dados, com os dados fornecidos no corpo da requisição.</p>
+        <h3>GET /dontWantForm/getAll</h3>
+        <p>Este endpoint retorna todos os dontWantForm do banco de dados.</p>
+        <h3>PUT /dontWantForm/update/:id</h3>
+        <p>Este endpoint atualiza as informações do formulário de um usuário específico com o ID passado na URL.</p>
+        <h3>POST /whyHaveDog/create</h3>
+        <p>Este endpoint cria um whyHaveDog no banco de dados, com os dados fornecidos no corpo da requisição.</p>
+        <h3>GET /whyHaveDog/getAll</h3>
+        <p>Este endpoint retorna todos os whyHaveDog do banco de dados.</p>
+        <h3>POST /whyDog</h3>
+        <p>Este endpoint cria um whyDog no banco de dados, com os dados fornecidos no corpo da requisição.</p>
+        <h3>GET /whyDog</h3>
+        <p>Este endpoint retorna todos os whyDog do banco de dados.</p>
+        <h3>GET /whyDog/:id</h3>
+        <p>Este endpoint retorna os dados de um whyDog específico com o ID passado na URL.</p>
+        <h3>PUT /whyDog/:id</h3>
+        <p>Este endpoint atualiza as informações do formulário de um usuário específico com o ID passado na URL.</p>
+        <h3>DELETE /whyDog/:id</h3>
+        <p>Este endpoint deleta um whyDog específico com o ID passado na URL.</p>
+        <h3>POST /otherPet</h3>
+        <p>Este endpoint cria um otherPet no banco de dados, com os dados fornecidos no corpo da requisição.</p>
+        <h3>GET /otherPet</h3>
+        <p>Este endpoint retorna todos os otherPet do banco de dados.</p>
+        <h3>GET /otherPet/:id</h3>
+        <p>Este endpoint retorna os dados de um otherPet específico com o ID passado na URL.</p>
+        <h3>PUT /otherPet/:id</h3>
+        <p>Este endpoint atualiza as informações do formulário de um usuário específico com o ID passado na URL.</p>
+        <h3>DELETE /otherPet/:id</h3>
+        <p>Este endpoint deleta um otherPet específico com o ID passado na URL.</p>
+        <h3>POST /neverHadForm</h3>
+        <p>Este endpoint cria um neverHadForm no banco de dados, com os dados fornecidos no corpo da requisição.</p>
+        <h3>GET /neverHadForm</h3>
+        <p>Este endpoint retorna todos os neverHadForm do banco de dados.</p>
+        <h3>GET /neverHadForm/:id</h3>
+        <p>Este endpoint retorna os dados de um neverHadForm específico com o ID passado na URL.</p>
+        <h3>PUT /neverHadForm/:id</h3>
+        <p>Este endpoint atualiza as informações do formulário de um usuário específico com o ID passado na URL.</p>
+        <h3>DELETE /neverHadForm/:id</h3>
+        <p>Este endpoint deleta um neverHadForm específico com o ID passado na URL.</p>
+        <h3>GET /userForms/showAllResponses</h3>
+        <p>Este endpoint retorna todas as respostas de todos os formulários.</p>
+        <h3>GET /telaAdm</h3>
+        <p>Este endpoint retorna as informações dos formulários para a view.</p>
+
+        <h2>Exemplos de Uso</h2>
+
+        <p>Aqui estão alguns exemplos de como você pode utilizar os endpoints da API:</p>
+
+        <pre>
+    <!--exemplos de endpoints-->
+        POST /authLogin
+        - Este endpoint faz a verificação das credenciais passadas através do corpo da requisição no Firebase.
+    
+        POST /authCadastro
+        - Este endpoint cria um usuário com os dados fornecidos no corpo da requisição no Firebase.
+    
+        GET /userForms
+        - Retorna todas as respostas do formulário resenha no sistema.
+    
+        GET /userForms/1
+        - Retorna as respostas do formulário com ID 1.
+    
+        POST /userForms
+        - Cria um novo formulário com os seguintes dados no corpo da requisição:
+        {
+            "id": "002",
+            "idade": 30,
+            "gênero": "Masculino",
+            "educação": "Ensino Superior Completo",
+            "tipo de residência": "Apartamento",
+            "família": "Casado, 2 filhos",
+            "renda familiar": "R$ 5.000,00",
+            "membros da família": "4 pessoas",
+            "país": "Brasil",
+            "estado": "São Paulo",
+            "cidade": "São Paulo",
+            "bairro": "Centro",
+            "relações com cães": "Gosta muito"
+        }
+    
+          </pre>
+    </div>
+
+    <!--simula o preenchimento do login-->
+    <div class="container mt-5">
+        <h2 class="mb-4">Login</h2>
+        <form id="loginForm">
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" required>
+            </div>
+            <div class="mb-3">
+                <label for="senha" class="form-label">Senha</label>
+                <input type="password" class="form-control" id="senha" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+
+        <div id="loginInfo" class="mt-4" style="display: none;">
+            <h3>Informações de Login</h3>
+            <p><strong>Email:</strong> <span id="displayEmail"></span></p>
+            <p><strong>Senha:</strong> <span id="displaySenha"></span></p>
+        </div>
+
+        <!--simula o preenchimento e um dos formulários -->
+        <h2 class="mb-4">Cadastrar Novo Formulário</h2>
+        <form id="formularioForm">
+            <div class="mb-3">
+                <label for="idade" class="form-label">Idade</label>
+                <input type="number" class="form-control" id="idade" required>
+            </div>
+            <div class="mb-3">
+                <label for="genero" class="form-label">Gênero</label>
+                <input type="text" class="form-control" id="genero" required>
+            </div>
+            <div class="mb-3">
+                <label for="educacao" class="form-label">Educação</label>
+                <input type="text" class="form-control" id="educacao" required>
+            </div>
+            <div class="mb-3">
+                <label for="tipoResidencia" class="form-label">Tipo de Residência</label>
+                <input type="text" class="form-control" id="tipoResidencia" required>
+            </div>
+            <div class="mb-3">
+                <label for="familia" class="form-label">Família</label>
+                <input type="text" class="form-control" id="familia" required>
+            </div>
+            <div class="mb-3">
+                <label for="rendaFamiliar" class="form-label">Renda Familiar</label>
+                <input type="text" class="form-control" id="rendaFamiliar" required>
+            </div>
+            <div class="mb-3">
+                <label for="membrosFamilia" class="form-label">Membros da Família</label>
+                <input type="text" class="form-control" id="membrosFamilia" required>
+            </div>
+            <div class="mb-3">
+                <label for="pais" class="form-label">País</label>
+                <input type="text" class="form-control" id="pais" required>
+            </div>
+            <div class="mb-3">
+                <label for="estado" class="form-label">Estado</label>
+                <input type="text" class="form-control" id="estado" required>
+            </div>
+            <div class="mb-3">
+                <label for="cidade" class="form-label">Cidade</label>
+                <input type="text" class="form-control" id="cidade" required>
+            </div>
+            <div class="mb-3">
+                <label for="bairro" class="form-label">Bairro</label>
+                <input type="text" class="form-control" id="bairro" required>
+            </div>
+            <div class="mb-3">
+                <label for="relacoesComCaes" class="form-label">Relações com Cães</label>
+                <input type="text" class="form-control" id="relacoesComCaes" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Cadastrar</button>
+        </form>
+    </div>
+
+    <div class="container mt-5">
+        <h2 class="mb-4">Lista de Formulários</h2>
+        <table id="formularioTable" class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Idade</th>
+                    <th>Gênero</th>
+                    <th>Educação</th>
+                    <th>Tipo de Residência</th>
+                    <th>Família</th>
+                    <th>Renda Familiar</th>
+                    <th>Membros da Família</th>
+                    <th>País</th>
+                    <th>Estado</th>
+                    <th>Cidade</th>
+                    <th>Bairro</th>
+                    <th>Relações com Cães</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Aqui serão inseridos os dados dos formulários -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            carregarListaFormularios();
+
+            //envio do formulário
+            const formularioForm = document.getElementById("formularioForm");
+            formularioForm.addEventListener("submit", function (event) {
+                event.preventDefault();
+                //Coleta os dados do formulário
+                const data = {
+                   id: "laaka",
+                    age: document.getElementById("idade").value,
+                    gender: document.getElementById("genero").value,
+                    education: document.getElementById("educacao").value,
+                    homeType: document.getElementById("tipoResidencia").value,
+                    family: document.getElementById("familia").value,
+                    familyIncome: document.getElementById("rendaFamiliar").value,
+                    homeMembers: document.getElementById("membrosFamilia").value,
+                    country: document.getElementById("pais").value,
+                    state: document.getElementById("estado").value,
+                    city: document.getElementById("cidade").value,
+                    neighborhood: document.getElementById("bairro").value,
+                    dogRelate: document.getElementById("relacoesComCaes").value,
+                };
+
+                const token = localStorage.getItem('authToken');
+
+                //envia os dados para o servidor
+                fetch('http://localhost:1337/userForms', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': token
+                    },
+                    body: JSON.stringify(data)
+                })
+                    .then(response => {
+                        if (response.ok) {
+                            carregarListaFormularios();
+                            formularioForm.reset();
+                        } else {
+                            console.error('Erro ao cadastrar formulário');
+                        }
+                    })
+                    .catch(error => console.error('Erro ao cadastrar formulário:', error));
+            });
+
+            //envio do login
+            loginForm.addEventListener("submit", function (event) {
+                event.preventDefault();
+                const email = document.getElementById("email").value;
+                const senha = document.getElementById("senha").value;
+
+                fetch('http://localhost:1337/authLogin', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ email: email, password: senha })
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        localStorage.setItem('authToken', data.token);
+
+                        document.getElementById("displayEmail").textContent = email;
+                        document.getElementById("displaySenha").textContent = senha;
+                        document.getElementById("loginInfo").style.display = "block";
+                    })
+                    .catch(error => console.error('Erro ao fazer login:', error));
+            });
+        });
+
+        //função que carrega a lista de formulários preenchidos
+        function carregarListaFormularios() {
+            fetch('http://localhost:1337/userForms')
+                .then(response => response.json())
+                .then(formularios => {
+                    const tabela = document.querySelector("#formularioTable tbody");
+                    tabela.innerHTML = ""; // Limpa a tabela antes de inserir novos dados
+                    formularios.forEach(formulario => {
+                        const row = document.createElement("tr");
+                        row.innerHTML = `
+                <td>${formulario.id}</td>
+                  <td>${formulario.age}</td>
+                  <td>${formulario.gender}</td>
+                  <td>${formulario.education}</td>
+                  <td>${formulario.homeType}</td>
+                  <td>${formulario.family}</td>
+                  <td>${formulario.familyIncome}</td>
+                  <td>${formulario.homeMembers}</td>
+                  <td>${formulario.country}</td>
+                  <td>${formulario.state}</td>
+                  <td>${formulario.city}</td>
+                  <td>${formulario.neighborhood}</td>
+                  <td>${formulario.dogRelate}</td>
+                `;
+                        tabela.appendChild(row);
+                    });
+                })
+                .catch(error => console.error('Erro ao carregar a lista de formulários:', error));
+        }
+    </script>

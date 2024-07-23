@@ -1,0 +1,347 @@
+<link
+  href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+  rel="stylesheet"
+/>
+<title>Login Page</title>
+<style>
+  body {
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(150deg, #cee2ff 60%, #6f73d2 100%);
+    background-attachment: fixed; /* Fixa a imagem de fundo */
+  }
+  .cabecalho {
+    background-color: #6f73d2;
+    height: auto;
+  }
+  .cabecalho .navbar-nav .nav-link {
+    color: #fff;
+    font-size: 1.5rem;
+    margin: 10px;
+  }
+  .cabecalho .navbar-nav .nav-link:hover {
+    text-decoration: underline;
+    color: #fff;
+  }
+  #cadastro {
+    background-color: #cee2ff;
+    color: #000;
+    border: 2px groove black;
+    box-shadow: 3px 5px 5px rgba(10, 32, 54, 0.25);
+    border-radius: 16px;
+    padding: 5px 10px;
+    font-size: 1.6 rem;
+    font-weight: 800;
+    margin-left: 48px;
+    margin-right: 16px;
+    text-decoration: none;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  #cadastro:hover {
+    background-color: #4246a2;
+    color: #fff;
+    transform: scale(1.1);
+    border: none;
+  }
+
+  #cadastro-btn {
+    background-color: #6f73d2;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 800;
+    border-radius: 16px;
+    padding: 5px 10px;
+    box-shadow: 3px 4px 4px rgba(10, 32, 54, 0.25);
+    border-radius: 16px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    border: 1.5px solid white;
+  }
+  #cadastro-btn:hover {
+    background-color: #4246a2;
+    color: #fff;
+    transform: scale(1.15);
+    border: none;
+  }
+  #forget-btn {
+    display: inline-block;
+    background-color: #fff;
+    color: #000;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 5px 10px;
+    box-shadow: 3px 4px 4px rgba(10, 32, 54, 0.25);
+    border-radius: 16px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  #forget-btn:hover {
+    background-color: #4246a2;
+    color: #fff;
+    transform: scale(1.2);
+    border: none;
+    text-decoration: none;
+  }
+
+  #nav-title {
+    font-size: 2.6rem;
+    font-weight: 800;
+    color: #fff;
+  }
+  .mb-3 {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+  }
+  .form-label {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  .form-control {
+    border-radius: 8px;
+    padding: 7px;
+    width: 32rem;
+  }
+  .btn-btn-secondary {
+    background-color: #6f73d2;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 800;
+    border-radius: 16px;
+    padding: 5px 10px;
+    box-shadow: 3px 5px 4px rgba(10, 32, 54, 0.25);
+    border-radius: 16px;
+  }
+  .img {
+    display: flex;
+    justify-content: center;
+  }
+  #login-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #6f73d2;
+  }
+  #login-sub {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #4246a2;
+    padding-bottom: 16px;
+  }
+  .left-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 24px;
+  }
+  .right-side {
+    background-color: #6f73d2;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16%;
+    margin-bottom: 10px;
+  }
+  .right-side-content {
+    text-align: center;
+  }
+  .right-side-content h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+  }
+  .right-side-content p {
+    font-size: 1.2rem;
+  }
+  .btn-forget {
+    background-color: #fff;
+    color: #000;
+    font-size: 1rem;
+    font-weight: 400;
+    border-radius: 16px;
+    padding: 5px 10px;
+    box-shadow: 3px 5px 4px rgba(10, 32, 54, 0.25);
+    border-radius: 16px;
+    display: inline;
+    margin-left: 32px;
+  }
+  .nav-item {
+    display: flex;
+    align-items: center;
+  }
+  .nav-icon-home,
+  .nav-icon-card-text,
+  .nav-icon-telephone {
+    filter: invert(100%);
+    margin-left: 32px; /* Espaçamento entre o ícone e o texto */
+  }
+  @media (max-width: 768px) {
+    .img,
+    .right-side-content,
+    .right-side {
+      display: none;
+    }
+
+    #email,
+    #password {
+      width: 20rem;
+    }
+  }
+</style>
+<header class="cabecalho">
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand" href="#">
+      <img
+        src="\images\logoInspa.png"
+        alt="Logo Abandono Zero"
+        class="d-inline-block align-top"
+        width="110"
+        height="110"
+      />
+    </a>
+    <h1 id="nav-title">Abandono Zero</h1>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <img
+            src="\images\telephone.svg"
+            alt="contact"
+            class="nav-icon-telephone"
+            width="24px"
+            height="24px"
+          />
+          <a class="nav-link" href="./#footer">Contato</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="cadastro" href="./signup"
+            >Cadastre-se</a
+          >
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<div class="container pt-5">
+  <div class="row">
+    <div class="col-md-6 left-side">
+      <h1 id="login-title">Abandono Zero</h1>
+      <h2 id="login-sub">Entre em sua conta</h2>
+      <form id="form-login">
+        <div class="mb-3">
+          <label for="email" class="form-label">E-mail</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            name="email"
+            placeholder="Digite seu email"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Senha</label>
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            name="password"
+            placeholder="Digite sua senha"
+          />
+        </div>
+        <button type="submit" class="btn-btn-secondary" id="cadastro-btn">Entrar</button>
+        <a href="./forgotPassword" class="btn-forget" id="forget-btn">
+          Esqueceu sua senha?
+        </a>
+      </form>
+    </div>
+    <div class="col-md-6 right-side">
+      <div class="right-side-content">
+        <a class="navbar-brand" href="#">
+          <img
+            id="dog-image"
+            src="images/cachorro-olhoaberto.png"
+            alt="Imagem cachorro de olho aberto"
+            class="img"
+            width="500"
+            height="500"
+          />
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Faz o cachorro abrir o olho ao focar na senha
+  const passwordField = document.getElementById("password");
+  const dogImage = document.getElementById("dog-image");
+  let isFieldActive = false;
+
+  passwordField.addEventListener("mouseenter", function () {
+    if (!isFieldActive) {
+      dogImage.src = "images/cachorrinho.png";
+    }
+  });
+
+  passwordField.addEventListener("mouseleave", function () {
+    if (!isFieldActive) {
+      dogImage.src = "images/cachorro-olhoaberto.png";
+    }
+  });
+
+  passwordField.addEventListener("focus", function () {
+    isFieldActive = true;
+    dogImage.src = "images/cachorrinho.png";
+  });
+
+  passwordField.addEventListener("blur", function () {
+    isFieldActive = false;
+    dogImage.src = "images/cachorro-olhoaberto.png";
+  });
+</script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+
+<script>
+  // Adiciona evento submit ao form
+  const formLogin = document.getElementById("form-login");
+  formLogin.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const emailAddress = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    // Faz a verificação no backend da aplicação
+    const response = await fetch("/authLogin", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        emailAddress: emailAddress,
+        password: password,
+      }),
+    });
+    const result = await response.json(); // JWT
+
+    if (result.err === "Firebase: Error (auth/invalid-credential).") {
+      alert("Email e/ou senha incorreto(s). Tente novamente!");
+    } else {
+      alert("Login realizado!");
+      localStorage.setItem("user", result); // Coloca o JWT no localstorage
+
+      if(emailAddress === "email@email.com"){
+        window.location.href = "/telaAdm";
+      }else{
+        window.location.href = "/formsresenha";
+      }
+    }
+  });
+</script>

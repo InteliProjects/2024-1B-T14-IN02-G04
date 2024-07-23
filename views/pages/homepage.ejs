@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Abandono Zero</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(120deg, #cee2ff 50%, #6f73d2 100%);
+        background-attachment: fixed; /* Fixa a imagem de fundo */
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 2.6rem;
+        font-weight: 800;
+        color: #fff;
+      }
+      .cabecalho {
+        background-color: #6f73d2;
+        height: auto;
+        padding: 20px 0;
+      }
+      .cabecalho .navbar-nav .nav-link {
+        color: #fff;
+        font-size: 1.5rem;
+        margin: 10px;
+        display: flex;
+        align-items: center;
+      }
+      .cabecalho .navbar-nav .nav-link:hover {
+        text-decoration: underline;
+        color: #fff;
+      }
+      #login {
+        background-color: #cee2ff;
+        color: #000;
+        border: 2px groove black;
+        box-shadow: 3px 5px 5px rgba(10, 32, 54, 0.25);
+        border-radius: 16px;
+        padding: 5px 10px;
+        font-size: 1.7rem;
+        font-weight: 800;
+        margin-left: 48px;
+        margin-right: 16px;
+        text-decoration: none;
+        transition: transform 0.3s ease, background-color 0.3s ease;
+      }
+      #login:hover {
+        background-color: #4246a2;
+        color: #fff;
+        transform: scale(1.15);
+        border: none;
+      }
+      .nav-item {
+        display: flex;
+        align-items: center;
+      }
+      .nav-icon {
+        filter: invert(100%);
+        margin-right: 8px;
+        margin-left: 24px;
+      }
+      .about,
+      .partners,
+      .footer-section {
+        padding: 40px 30px;
+        margin: 20px 0;
+      }
+      .about {
+        background-color: #6f73d2;
+        border-radius: 20px;
+        color: #000;
+      }
+      .about-content {
+        display: flex;
+        align-items: center;
+      }
+      .about-text {
+        flex: 1;
+        color: #fffff8;
+      }
+      .about-text h1 {
+        font-size: 2.6rem;
+        font-weight: 800;
+        color: #fffff8;
+      }
+      .about-text p {
+        font-size: 1.2rem;
+        font-weight: 500;
+      }
+      .about-p {
+        font-size: 1.5rem;
+        font-weight: 800;
+        margin-top: 70px;
+        color: #fffff8;
+      }
+      .about-img {
+        margin-left: 20px;
+      }
+      .about-img img {
+        max-width: 100%;
+        height: auto;
+      }
+      .form-button a {
+        background-color: #4246a2;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: 800;
+        font-size: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+        transition: transform 0.3s ease, background-color 0.3s ease;
+        box-shadow: 5px 5px 5px rgba(0, 28, 105, 0.211);
+      }
+      .form-button a:hover {
+        background-color: #cee2ff;
+        text-decoration: none;
+        color: #000;
+        box-shadow: 5px 5px 5px rgba(0, 28, 105, 0.211);
+        transform: scale(1.05);
+      }
+      .partners {
+        background-color: #4246a2;
+        border-radius: 20px;
+        color: #fff;
+      }
+      .partner-text-center {
+        padding: 20px;
+        border-radius: 24px;
+        margin-bottom: 20px;
+        text-align: center;
+        background-color: #6f73d2;
+        color: #fffff8;
+        height: 516px;
+      }
+      .partner img {
+        height: 100px;
+        margin-bottom: 10px;
+      }
+      #partners-h2 {
+        font-size: 2.5rem;
+        font-weight: 600;
+        color: #fff;
+        padding-bottom: 20px;
+      }
+      .partner h3 {
+        margin: 0;
+        margin-bottom: 5px;
+      }
+      .partner p {
+        margin: 0;
+      }
+      .row {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      footer {
+        background-color: #6f73d2;
+        color: #fff;
+        padding: 20px 0;
+        text-align: center;
+      }
+      footer .footer-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .social-icons {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        gap: 10px;
+      }
+      footer .footer-content .social-icons {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        gap: 15px;
+      }
+      footer .footer-content .social-icons li {
+        display: inline-block;
+      }
+      footer p {
+        margin: 0;
+        font-size: 1rem;
+      }
+
+      @media (max-width: 768px) {
+        .about-img {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="cabecalho">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="#">
+          <img
+            src="/images/logoInspa.png"
+            alt="Logo Abandono Zero"
+            class="d-inline-block align-top"
+            width="110"
+            height="110"
+            href="#home"
+          />
+        </a>
+        <h1 href="#home">Abandono Zero</h1>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#home">
+                <img
+                  src="/images/house.svg"
+                  alt="home"
+                  class="nav-icon"
+                  width="24px"
+                  height="24px"
+                />Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">
+                <img
+                  src="/images/card-text.svg"
+                  alt="about"
+                  class="nav-icon"
+                  width="24px"
+                  height="24px"
+                />Sobre
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#partners">
+                <img
+                  src="/images/box-arrow-in-right.svg"
+                  alt="partners"
+                  class="nav-icon"
+                  width="24px"
+                  height="24px"
+                />Parceiros
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#footer">
+                <img
+                  src="/images/telephone.svg"
+                  alt="contact"
+                  class="nav-icon"
+                  width="24px"
+                  height="24px"
+                />Contato
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="login" href="./signup"
+                >Cadastre-se</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container mt-4">
+      <section id="about" class="about">
+        <div class="about-content">
+          <div class="about-text">
+            <h1>Sobre o PROJETO ABANDONO ZERO</h1>
+            <p id="about-p">
+              Abandono Zero é uma iniciativa que envolve a coleta de dados
+              através de um formulário a fim de mapear as causas do abandono de
+              animais para reduzi-lo. Assim, o objetivo é garantir que os cães
+              tenham um lar amoroso e responsável, além de, principalmente, que
+              cada dia menos animais vivam a situação de abandono no Brasil e
+              Mundo.
+            </p>
+            <div class="form-button">
+              <p class="about-p">
+                Clique <strong>aqui</strong> para responder ao nosso
+                <strong>FORMULÁRIO!</strong>
+              </p>
+              <a href="./signup">Responder agora!</a>
+            </div>
+          </div>
+          <div class="about-img">
+            <img
+              src="/images/logoInspa.png"
+              alt="cachorrinho"
+              width="330px"
+              height="330px"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section id="partners" class="partners">
+        <h2 id="partners-h2">Sobre os Parceiros:</h2>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="partner-text-center" id="block1">
+              <img
+                src="/images/MulherCachorro.png"
+                alt="Mulher com um cachorro"
+                class="img-fluid mb-2"
+              />
+              <h3>INSPA</h3>
+              <p style="font-weight: 500">
+                O Instituto de Saúde e Psicologia Animal é pioneiro no campo
+                educacional brasileiro, oferecendo cursos de pós-graduação e
+                programas que exploram o bem-estar e a interação humano-animal.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="partner-text-center" id="block2">
+              <img
+                src="/images/alexandre_cachorro.png"
+                alt="Alexandre Rossi"
+                class="img-fluid mb-2"
+              />
+              <h3>ALEXANDRE ROSSI</h3>
+              <p style="font-weight: 500">
+                Renomado especialista em comportamento animal, conhecido por sua
+                abordagem empática e eficaz na comunicação com animais de
+                estimação, é graduado em Zootecnia e em Medicina Veterinária.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="partner-text-center" id="block3">
+              <img
+                src="/images/ceres.png"
+                alt="Ceres Berger"
+                class="img-fluid mb-2"
+              />
+              <h3>CERES BERGER</h3>
+              <p style="font-weight: 500">
+                Possui graduação em Medicina Veterinária pela Universidade
+                Federal do Rio Grande do Sul, mestrado em Psicologia pela
+                Pontifícia Universidade Católica do Rio Grande do Sul e Ceres é
+                também renomada em comportamento animal.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <section id="contact" class="contact">
+      <div class="container">
+        <div
+          class="row"
+          style="display: flex; justify-content: center; align-items: center"
+        >
+          <div class="col-md-8">
+            <div class="about" style="background-color: #7681d3">
+              <h1
+                style="
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                "
+              >
+                Entre em contato!
+              </h1>
+              <p
+                style="
+                  display: flex;
+                  justify-content: center;
+                  text-align: center;
+                  font-weight: 600;
+                  color: #fffff8;
+                  font-size: 18px;
+                "
+              >
+                Você pesquisador, nos contate para ter acesso aos dados sobre o
+                projeto Abandono Zero.
+              </p>
+              <div class="form-button">
+                <a href="./contato">Contatar agora</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer id="footer">
+      <div class="container">
+        <div class="footer-content">
+          <p>&copy; 2024 Abandono Zero. Todos os direitos reservados.</p>
+
+          <img
+            src="images/cachorrinho.png"
+            alt="#"
+            height="96px"
+            width="96px"
+          />
+
+          <ul class="social-icons">
+            <li>
+              <a href="https://www.facebook.com/projetoabandonozero/"
+                ><img
+                  src="/images/facebook.svg"
+                  alt="Facebook"
+                  height="32px"
+                  width="32px"
+              /></a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/projetoabandonozero/"
+                ><img
+                  src="/images/instagram.svg"
+                  alt="Instagram"
+                  height="32px"
+                  width="32px"
+              /></a>
+            </li>
+            <li>
+              <a href="#"
+                ><img
+                  src="/images/whatsapp.svg"
+                  alt="Whatsapp"
+                  height="32px"
+                  width="32px"
+              /></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      $(document).ready(function () {
+        $("#about").click(function (event) {
+          event.preventDefault();
+          $("html, body").animate(
+            {
+              scrollTop: $("#about").offset().top,
+            },
+            1000
+          );
+        });
+      });
+
+      $(document).ready(function () {
+        $("#partners").click(function (event) {
+          event.preventDefault();
+          $("html, body").animate(
+            {
+              scrollTop: $("#partners").offset().top,
+            },
+            1000
+          );
+        });
+      });
+
+      $(document).ready(function () {
+        $("#footer").click(function (event) {
+          event.preventDefault();
+          $("html, body").animate(
+            {
+              scrollTop: $("#footer").offset().top,
+            },
+            1000
+          );
+        });
+      });
+      
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

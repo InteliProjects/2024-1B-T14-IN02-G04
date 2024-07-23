@@ -1,0 +1,19 @@
+{
+    "all": true,
+    "include": [
+      "api/controllers/*.js"
+    ],
+    "exclude": [
+      "tests/**/*.js"
+    ],
+    "reporter": [
+      "text",
+      "html"
+    ],
+    "check-coverage": true,
+    "statements": 80,
+    "branches": 80,
+    "functions": 80,
+    "lines": 80
+  }
+  

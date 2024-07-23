@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/styles/null_form.css" rel="stylesheet" />
+    <title>Formulário Resenha</title>
+    <style>
+        .form-page {
+            display: none;
+        }
+
+        .form-page.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="progress" role="progressbar" aria-label="Progress" aria-valuenow="25" aria-valuemin="0"
+        aria-valuemax="100" style="height: 5px">
+        <div class="progress-bar" style="width: 33%"></div>
+    </div>
+
+    <div class="main">
+        <form id="resenha-form">
+            <div id="page-1" class="form-page active">
+                <div class="main_question">
+                    <h3>Qual a sua idade?</h3>
+                </div>
+                <br>
+                <label for="idade"></label>
+                <div class="main_answer_box">
+                    <div class="wave-group">
+                        <input required id="idade" name="idade" type="text" class="input">
+                        <span class="bar"></span>
+                        <label class="label">
+                            <span class="label-char0" style="--index: 0">R</span>
+                            <span class="label-char1" style="--index: 1">e</span>
+                            <span class="label-char2" style="--index: 2">s</span>
+                            <span class="label-char3" style="--index: 3">p</span>
+                            <span class="label-char4" style="--index: 4">o</span>
+                            <span class="label-char5" style="--index: 5">s</span>
+                            <span class="label-char6" style="--index: 6">t</span>
+                            <span class="label-char7" style="--index: 7">a</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="main_question">
+                    <h3>Qual o seu sexo?</h3>
+                </div>
+                <br>
+                <div class="main_answer_box">
+                    <div class="wave-group">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="sexo" id="masculino" value="Masculino">
+                            <label class="form-check-label" for="masculino">Masculino</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="sexo" id="feminino" value="Feminino">
+                            <label class="form-check-label" for="feminino">Feminino</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="sexo" id="outro" value="Outro">
+                            <label class="form-check-label" for="outro">Outro</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="main_question">
+                    <h3>Qual a sua escolaridade?</h3>
+                </div>
+                <br>
+                <div class="main_answer_box">
+                    <div class="wave-group">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="escolaridade" id="fundamental"
+                                value="Fundamental">
+                            <label class="form-check-label" for="fundamental">Fundamental</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="escolaridade" id="medio" value="Médio">
+                            <label class="form-check-label" for="medio">Médio</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="escolaridade" id="superior"
+                                value="Superior">
+                            <label class="form-check-label" for="superior">Superior</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="escolaridade" id="pos"
+                                value="Pós-graduação">
+                            <label class="form-check-label" for="pos">Pós-graduação</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="main_question">
+                    <h3>Tipo de moradia?</h3>
+                </div>
+                <br>
+                <div class="main_answer_box">
+                    <div class="wave-group">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="moradia" id="casa" value="Casa">
+                            <label class="form-check-label" for="casa">Casa</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="moradia" id="apartamento"
+                                value="Apartamento">
+                            <label class="form-check-label" for="apartamento">Apartamento</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="moradia" id="rural" value="Imóvel rural">
+                            <label class="form-check-label" for="rural">Imóvel rural</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="page-2" class="form-page">
+                <div class="main_question">
+                    <h3>Constituição familiar</h3>
+                </div>
+                <br>
+                <div class="main_answer_box">
+                    <div class="wave-group">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="familiar" id="solteiro" value="Solteiro">
+                            <label class="form-check-label" for="solteiro">Solteiro.</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="familiar" id="amigos"
+                                value="Solteiros que vivem com amigos">
+                            <label class="form-check-label" for="amigos">Solteiros que vivem com amigos.</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="familiar" id="amigos"
+                                value="Solteiros que vivem com amigos">
+                            <label class="form-check-label" for="amigos">Casal sem filhos humanos.</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="familiar" id="amigos"
+                                value="Solteiros que vivem com amigos">
+                            <label class="form-check-label" for="amigos">Casal com filhos pequenos.</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="familiar" id="amigos"
+                                value="Solteiros que vivem com amigos">
+                            <label class="form-check-label" for="amigos">Casal com filhos adolescentes.</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="familiar" id="amigos"
+                                value="Solteiros que vivem com amigos">
+                            <label class="form-check-label" for="amigos">Casal com filhos adultos.</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="familiar" id="amigos"
+                                value="Solteiros que vivem com amigos">
+                            <label class="form-check-label" for="amigos">Casal idoso (70+).</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="familiar" id="amigos"
+                                value="Solteiros que vivem com amigos">
+                            <label class="form-check-label" for="amigos">Casal idoso (70+) com filhos adultos.</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="familiar" id="amigos"
+                                value="Solteiros que vivem com amigos">
+                            <label class="form-check-label" for="amigos">Idoso sozinho.</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="familiar" id="amigos"
+                                value="Solteiros que vivem com amigos">
+                            <label class="form-check-label" for="amigos">Idoso com filhos.</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="main_question">
+                    <h3>Renda familiar mensal</h3>
+                </div>
+                <br>
+                <div class="main_answer_box">
+                    <div class="wave-group">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="renda" id="ate1412" value="Até R$ 1.412">
+                            <label class="form-check-label" for="ate1412">Até R$ 1.412</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="renda" id="ate1412" value="Até R$ 1.412">
+                            <label class="form-check-label" for="ate1412">De R$ 1.412 até R$4.236</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="renda" id="ate1412" value="Até R$ 1.412">
+                            <label class="form-check-label" for="ate1412">De R$4.236 até R$8.472</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="renda" id="ate1412" value="Até R$ 1.412">
+                            <label class="form-check-label" for="ate1412">De R$8.472 até R$12.708</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="renda" id="ate1412" value="Até R$ 1.412">
+                            <label class="form-check-label" for="ate1412">Acima de R$12.708</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="main_question">
+                    <h3>Quantas pessoas vivem na casa?</h3>
+                </div>
+                <br>
+                <div class="main_answer_box">
+                    <div class="wave-group">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="pessoas" id="1" value="1">
+                            <label class="form-check-label" for="1">1</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="pessoas" id="1" value="1">
+                            <label class="form-check-label" for="1">2</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="pessoas" id="1" value="1">
+                            <label class="form-check-label" for="1">3</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="pessoas" id="1" value="1">
+                            <label class="form-check-label" for="1">4</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="pessoas" id="1" value="1">
+                            <label class="form-check-label" for="1">5 ou mais.</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="page-3" class="form-page">
+                <div class="main_question">
+                    <h3>País</h3>
+                </div>
+                <br>
+                <label for="pais"></label>
+                <div class="main_answer_box">
+                    <div class="wave-group">
+                        <input required id="pais" name="pais" type="text" class="input">
+                        <span class="bar"></span>
+                        <label class="label">
+                            <span class="label-char0" style="--index: 0">P</span>
+                            <span class="label-char1" style="--index: 1">a</span>
+                            <span class="label-char2" style="--index: 2">i</span>
+                            <span class="label-char3" style="--index: 3">s</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="main_question">
+                    <h3>Estado</h3>
+                </div>
+                <br>
+                <label for="estado"></label>
+                <div class="main_answer_box">
+                    <div class="wave-group">
+                        <input required id="estado" name="estado" type="text" class="input">
+                        <span class="bar"></span>
+                        <label class="label">
+                            <span class="label-char0" style="--index: 0">E</span>
+                            <span class="label-char1" style="--index: 1">s</span>
+                            <span class="label-char2" style="--index: 2">t</span>
+                            <span class="label-char3" style="--index: 3">a</span>
+                            <span class="label-char4" style="--index: 4">d</span>
+                            <span class="label-char5" style="--index: 5">o</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="main_question">
+                    <h3>Cidade</h3>
+                </div>
+                <br>
+                <label for="cidade"></label>
+                <div class="main_answer_box">
+                    <div class="wave-group">
+                        <input required id="cidade" name="cidade" type="text" class="input">
+                        <span class="bar"></span>
+                        <label class="label">
+                            <span class="label-char0" style="--index: 0">C</span>
+                            <span class="label-char1" style="--index: 1">i</span>
+                            <span class="label-char2" style="--index: 2">d</span>
+                            <span class="label-char3" style="--index: 3">a</span>
+                            <span class="label-char4" style="--index: 4">d</span>
+                            <span class="label-char5" style="--index: 5">e</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="main_question">
+                    <h3>Bairro</h3>
+                </div>
+                <br>
+                <label for="bairro"></label>
+                <div class="main_answer_box">
+                    <div class="wave-group">
+                        <input required id="bairro" name="bairro" type="text" class="input">
+                        <span class="bar"></span>
+                        <label class="label">
+                            <span class="label-char0" style="--index: 0">B</span>
+                            <span class="label-char1" style="--index: 1">a</span>
+                            <span class="label-char2" style="--index: 2">i</span>
+                            <span class="label-char3" style="--index: 3">r</span>
+                            <span class="label-char4" style="--index: 4">r</span>
+                            <span class="label-char5" style="--index: 5">o</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div id="page-4" class="form-page">
+                <div class="main_question">
+                    <h3>Qual a sua relação com cachorros?</h3>
+                </div>
+                <br>
+                <div class="main_answer_box">
+                    <div class="wave-group">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="relacao" id="tenho"
+                                value="Tenho cachorro">
+                            <label class="form-check-label" for="tenho">Tenho cachorro(s).</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="relacao" id="ja_tive"
+                                value="Já tive cachorro">
+                            <label class="form-check-label" for="ja_tive">Já tive cachorro(s).</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="relacao" id="quero_ter"
+                                value="Quero ter cachorro">
+                            <label class="form-check-label" for="quero_ter">Quero ter cachorro(s).</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="relacao" id="nao_quero"
+                                value="Não quero">
+                            <label class="form-check-label" for="nao_quero">Não quero e nunca tive cachorro(s).</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main_footer">
+                <div class="button_style">
+                    <button type="button" class="btn btn-primary" id="okBtn">OK</button>
+                </div>
+                <div class="main_navigation">
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <button type="button" class="btn btn-primary" id="prevBtn">∧</button>
+                        <button type="button" class="btn btn-primary" id="nextBtn">∨</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script>
+
+        let currentPage = 0;
+        const pages = document.querySelectorAll('.form-page');
+
+        function showPage(page) {
+            pages.forEach((pageElement, index) => {
+                pageElement.classList.toggle('active', index === page);
+            });
+            updateProgressBar();
+        }
+
+        //Função que navega entre as páginas do formulário
+        function changePage(direction) {
+            if (direction === 'nextBtn' || direction === 'okBtn') {
+                if (currentPage < pages.length - 1) {
+                    currentPage++;
+                    showPage(currentPage);
+                } else {
+                    submitAnswers();
+                    changePage();
+                }
+            } else if (direction === 'prevBtn' && currentPage > 0) {
+                currentPage--;
+                showPage(currentPage);
+            }
+            updateProgressBar();
+        }
+
+        const answers = questions.map(page => page.map(() => ''));
+
+        document.getElementById('nextBtn').addEventListener('click', () => changePage('nextBtn'));
+        document.getElementById('prevBtn').addEventListener('click', () => changePage('prevBtn'));
+        document.getElementById('okBtn').addEventListener('click', () => changePage('okBtn'));
+
+        //Função que atualiza a barra de progresso
+        function updateProgressBar() {
+            const progressBar = document.getElementById('progress-bar');
+            const progress = currentPage / pages.length * 100;
+            progressBar.style.width = `${progress}%`;
+        }
+
+        
+        function changePage() {
+            if (answers[3][0] == "Tenho cachorro") {
+                window.location.href = '/forms-presente';
+            } else if (answers[3][0] == "Já tive cachorro") {
+                window.location.href = '/formspast';
+            } else if (answers[3][0] == "Quero ter cachorro") {
+                window.location.href = '/forms-future';
+            } else {
+                window.location.href = '/nullform';
+            }
+        }
+
+        //Função que organiza e guarda os dados no banco de dados.
+        function submitAnswers() {
+
+            const formData = {
+                //o formData é armazenado dentro de uma matriz
+                age: document.getElementById('idade').value,
+                gender: document.querySelector('input[name="sexo"]:checked').value,
+                education: document.querySelector('input[name="escolaridade"]:checked').value,
+                homeType: document.querySelector('input[name="moradia"]:checked').value,
+                family: document.querySelector('input[name="familiar"]:checked').value,
+                familyIncome: document.querySelector('input[name="renda"]:checked').value,
+                homeMembers: document.querySelector('input[name="pessoas"]:checked').value,
+                country: document.getElementById('pais').value,
+                state: document.getElementById('estado').value,
+                city: document.getElementById('cidade').value,
+                neighborhood: document.getElementById('bairro').value,
+                dogRelate: document.querySelector('input[name="relacao"]:checked').value
+            };
+
+            fetch('/userForms', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    Authorization: localStorage.getItem('user')
+                },
+                body: JSON.stringify(formData)
+            })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Success:', data);
+                    changePage();
+
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+        }
+
+        showPage(currentPage);
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tela de Administração</title>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <link href="styles/telaAdm.css" rel="stylesheet" />
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(150deg, #cee2ff 60%, #6f73d2 100%);
+        background-attachment: fixed;
+        margin: 0;
+        padding: 0;
+      }
+      .admin_header {
+        background-color: #6f73d2;
+        padding: 20px;
+        text-align: center;
+        color: white;
+      }
+      .title-tela {
+        margin: 0;
+        font-size: 2.5rem;
+        font-weight: 800;
+      }
+      .admin_content {
+        padding: 20px;
+      }
+      .admin_button {
+        background-color: #6f73d2;
+        color: white;
+        border: 2px solid #4246a2;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 14px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        transition: transform 0.3s ease, background-color 0.3s ease;
+      }
+      .admin_button:hover {
+        background-color: #4246a2;
+        transform: scale(1.2);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+      @media (max-width: 768px) {
+        .title-tela {
+          font-size: 2rem;
+        }
+        .admin_button {
+          width: 100%;
+          padding: 15px;
+        }
+        .admin_content {
+          padding: 16px; 
+        }
+        #chart-year {
+          width: 100%;
+        }
+        .apexcharts-title-text {
+          font-size: 16px !important;
+        }
+        .apexcharts-subtitle-text {
+          font-size: 14 px !important;
+        }
+      }
+    </style>
+  </head>
+  <body class="admin">
+    <header class="admin_header">
+      <h1 class="title-tela">DASHBOARD</h1>
+    </header>
+    <main class="admin_content">
+      <div id="chart-year"></div>
+      <button id="showJsonButton" class="admin_button">
+        Baixar JSON dos Dados
+      </button>
+    </main>
+    <script>
+      // Configurações do gráfico
+      var options = {
+        // Série de dados do gráfico
+        series: [{
+          data: [
+            { x: 'Formulário Resenha', y: <%= userForms.length %> },
+            { x: 'Já teve cachorros', y: <%= hadDogForms.length %> },
+            { x: 'Possui cachorro', y: <%= hasDogForms.length %> },
+            { x: 'Quer ter cachorro', y: <%= neverHadForms.length %> },
+            { x: 'Não quer cachorro', y: <%= dontWantForms.length %> }
+          ]
+        }],
+
+        // Configuração gráfica
+        chart: {
+          id: 'barYear',
+          height: 400,
+          width: '100%',
+          type: 'bar',
+          toolbar: {
+            show: false
+          }
+        },
+
+        // Configuração de plotagem dos dados
+        plotOptions: {
+          bar: {
+            distributed: true,
+            horizontal: true,
+            barHeight: '75%',
+            dataLabels: {
+              position: 'bottom'
+            }
+          }
+        },
+
+        // Configuração de labels do gráfico
+        dataLabels: {
+          enabled: true,
+          textAnchor: 'start',
+          style: {
+            colors: ['#000']
+          },
+          formatter: function (val, opt) {
+            return opt.w.globals.labels[opt.dataPointIndex]
+          },
+          offsetX: 0,
+        },
+        colors: ['#A3D5FF', '#83C9F4', '#7681D3', '#6f73d2', '#4246A2'],
+        states: {
+          normal: {
+            filter: {
+              type: 'desaturate'
+            }
+          },
+          active: {
+            allowMultipleDataPointsSelection: true,
+            filter: {
+              type: 'darken',
+              value: 1
+            }
+          }
+        },
+
+        // Configurações de tooltip do gráfico
+        tooltip: {
+          x: {
+            show: false
+          },
+          y: {
+            title: {
+              formatter: function (val, opts) {
+                return opts.w.globals.labels[opts.dataPointIndex]
+              }
+            }
+          }
+        },
+        title: {
+          text: 'Respostas por Formulário',
+          offsetX: 15,
+          style: {
+            fontSize: '24px',
+            color: '#000000'
+          }
+        },
+
+        // Subtítulo do gráfico
+        subtitle: {
+          text: '(Clique na barra para ver detalhes)',
+          offsetX: 15,
+          style: {
+            fontSize: '14px',
+            color: '#000000'
+          }
+        },
+
+        // Configuração do eixo Y do gráfico
+        yaxis: {
+          labels: {
+            show: false
+          }
+        },
+
+        // Configuração de legenda do gráfico
+        legend: {
+          show: false
+        }
+      };
+
+      // Croação do gráfico:
+      var chart = new ApexCharts(document.querySelector("#chart-year"), options);
+      chart.render();
+
+      //download dos arquivos em Json
+      document.getElementById('showJsonButton').addEventListener('click', function() {
+        fetch('/adm/showAllResponses')
+          .then(response => response.json())
+          .then(data => {
+            // Cria um arquivo JSON temporário
+            var jsonData = JSON.stringify(data, null, 2);
+            var blob = new Blob([jsonData], { type: 'application/json' });
+            var url = window.URL.createObjectURL(blob);
+
+            // Cria um link de download
+            var link = document.createElement('a');
+            link.href = url;
+            link.download = 'formularios.json';
+
+            // Dispara um clique no link para iniciar o download
+            link.click();
+          })
+          .catch(error => {
+            console.error('Erro ao obter os dados dos formulários:', error);
+          });
+      });
+    </script>
+  </body>
+</html>

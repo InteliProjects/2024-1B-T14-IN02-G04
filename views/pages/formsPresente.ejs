@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/styles/formsPresente.css" rel="stylesheet" />
+    <title>Formulário Multipáginas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(150deg, #6f73d2 50%, #ffffff 100%);
+            background-attachment: fixed;
+        }
+
+        .main {
+            max-width: 600px;
+            margin: 40px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-page {
+            display: none;
+        }
+
+        .form-page.active {
+            display: block;
+        }
+
+        .main_answer_box {
+            margin-bottom: 20px;
+        }
+
+        .input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .main_footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="progress" role="progressbar" aria-label="Progress" aria-valuenow="25" aria-valuemin="0"
+        aria-valuemax="100" style="height: 5px">
+        <div class="progress-bar" style="width: 50%"></div>
+    </div>
+
+    <div class="main">
+        <div class="main_alert">
+            <div class="alert alert-primary" role="alert">
+                Atenção! Esse formulário é para coleta de informações sobre seu pet.
+            </div>
+        </div>
+
+        <form id="pet-form">
+            <!-- Página 0 -->
+            <div id="page-0" class="form-page active">
+                <label for="name">Qual o nome do seu cachorro?</label>
+                <div class="main_answer_box">
+                    <div class="wave-group">
+                        <input required id="dogName" name="dogName" type="text" class="input">
+                        <span class="bar"></span>
+                    </div>
+                </div>
+                <label for="name">Qual o gênero do seu cachorro?</label>
+                <div class="main_answer_box">
+                    <div class="radio-container">
+                        <label class="container" for="dogGender_m">
+                            <input class="form-check-input" type="radio" name="dogGender" id="Macho" value="Macho">
+                            <label class="form-check-label" for="Macho">Macho</label>
+                        </label>
+                        <label class="container" for="dogGender_f">
+                            <input class="form-check-input" type="radio" name="dogGender" id="Fêmea" value="Fêmea">
+                            <label class="form-check-label" for="Fêmea">Fêmea</label>
+                        </label>
+                    </div>
+                </div>
+                <label for="owner">Pertence a você ou algum mebro da sua familia?</label>
+                <label for="ownership"></label>
+                <div class="main_answer_box">
+                    <div class="wave-group">
+                        <input required id="ownership" name="ownership" type="text" class="input">
+                        <span class="bar"></span>
+                    </div>
+                </div>
+                <label for="neutered">O cachorro é castrado</label>
+                <div class="main_answer_box">
+                    <div class="radio-container">
+                        <label class="container" for="neutered_yes">
+                            <input class="form-check-input" type="radio" name="neutered" id="sim" value="sim">
+                            <label class="form-check-label" for="sim">Sim</label>
+                        </label>
+                        <label class="container" for="neutered_no">
+                            <input class="form-check-input" type="radio" name="neutered" id="nao" value="nao">
+                            <label class="form-check-label" for="nao">Não</label>
+                        </label>
+                        <label class="container" for="neutered_dk">
+                            <input class="form-check-input" type="radio" name="neutered" id="naoSei" value="naoSei">
+                            <label class="form-check-label" for="naoSei">Não sei</label>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Página 1 -->
+            <div id="page-1" class="form-page">
+                <label>O cachorro está com você a quanto tempo? (meses)</label>
+                <div class="main_answer_box">
+                    <div class="wave-group">
+                        <input required id="howLong" name="howLong" type="number" min="1" max="100" class="input">
+                        <span class="bar"></span>
+                    </div>
+                </div>
+                <label>É seu primeiro cão?</label>
+                <div class="main_answer_box">
+                    <div class="radio-container">
+                        <label class="container" for="isFirstDog_yes">
+                            <input class="form-check-input" type="radio" name="isFirstDog" id="sim" value="sim">
+                            <label class="form-check-label" for="sim">Sim</label>
+                        </label>
+                        <label class="container" for="isFirstDog_no">
+                            <input class="form-check-input" type="radio" name="isFirstDog" id="nao" value="nao">
+                            <label class="form-check-label" for="nao">Não</label>
+                        </label>
+                    </div>
+                </div>
+                <label>Quantos outros pets vivem na casa?</label>
+                <div class="main_answer_box">
+                    <div class="radio-container">
+                        <label class="container" for="otherPets_1">
+                            <input class="form-check-input" type="radio" id="otherPets_1" name="otherPets" value="1">
+                            <label class="form-check-label" for="um">0</label>
+                        </label>
+                        <label class="container" for="otherPets_1">
+                            <input class="form-check-input" type="radio" id="otherPets_2" name="otherPets" value="2">
+                            <label class="form-check-label" for="dois">1</label>
+                        </label>
+                        <label class="container" for="otherPets_2">
+                            <input class="form-check-input" type="radio" id="otherPets_3" name="otherPets" value="3">
+                            <label class="form-check-label" for="tres">2</label>
+                        </label>
+                        <label class="container" for="otherPets_3">
+                            <input class="form-check-input" type="radio" id="otherPets_4" name="otherPets" value="4">
+                            <label class="form-check-label" for="quatro">3</label>
+                        </label>
+                        <label class="container" for="otherPets_4">
+                            <input class="form-check-input" type="radio" id="otherPets_5" name="otherPets" value="5">
+                            <label class="form-check-label" for="um">4</label>
+                        </label>
+                        <label class="container" for="otherPets_5">
+                            <input class="form-check-input" type="radio" id="otherPets_5" name="otherPets" value="5">
+                            <label class="form-check-label" for="um">5 ou mais</label>
+                        </label>
+                    </div>
+                </div>
+                <div class="main_question">
+                    <label>Qual a idade do cachorro?</label>
+                    <div class="main_answer_box">
+                        <div class="radio-container">
+                            <label class="container" for="dogAge_1">
+                                <input class="form-check-input" type="radio" id="dogAge_1" name="dogAge"
+                                    value="menor que 3 meses">
+                                <label class="form-check-label" for="um">Menor que 3 meses</label>
+                            </label>
+                            <label class="container" for="dogAge_2">
+                                <input class="form-check-input" type="radio" id="dogAge_2" name="dogAge"
+                                    value="de 3 a 6 meses">
+                                <label class="form-check-label" for="um">De 3 a 6 meses</label>
+                            </label>
+                            <label class="container" for="dogAge_3">
+                                <input class="form-check-input" type="radio" id="dogAge_3" name="dogAge"
+                                    value="de 6 a 9 meses">
+                                <label class="form-check-label" for="um">De 6 a 9 meses</label>
+                            </label>
+                            <label class="container" for="dogAge_4">
+                                <input class="form-check-input" type="radio" id="dogAge_4" name="dogAge"
+                                    value=" 9 meses">
+                                <label class="form-check-label" for="um">9 e 12 meses</label>
+                            </label>
+                            <label class="container" for="dogAge_5">
+                                <input class="form-check-input" type="radio" id="dogAge_5" name="dogAge"
+                                    value=" 9 meses">
+                                <label class="form-check-label" for="um">1 a 2 anos</label>
+                            </label>
+                            <label class="container" for="dogAge_6">
+                                <input class="form-check-input" type="radio" id="dogAge_6" name="dogAge"
+                                    value=" 9 meses">
+                                <label class="form-check-label" for="um">2 ou mais anos</label>
+                            </label>
+                            <label class="container" for="dogAge_7">
+                                <input class="form-check-input" type="radio" id="dogAge_7" name="dogAge"
+                                    value=" 9 meses">
+                                <label class="form-check-label" for="um">Não sei</label>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Página 2 -->
+            <div id="page-2" class="form-page">
+                <label>Qual a raça?</label>
+                <div class="main_answer_box">
+                    <div class="radio-container">
+                        <label class="container" for="breed_defined">
+                            <input class="form-check-input" type="radio" name="breed" id="breed_defined"
+                                value="Definida">
+                            <label class="form-check-label" for="breed_defined">Definida</label>
+                        </label>
+                        <label class="container" for="breed_undefined">
+                            <input class="form-check-input" type="radio" name="breed" id="breed_undefined"
+                                value="Não definida">
+                            <label class="form-check-label" for="breed_undefined">Não definida</label>
+                        </label>
+                        <label class="container" for="breed_mix">
+                            <input class="form-check-input" type="radio" name="breed" id="breed_mix"
+                                value="Mistura de raças">
+                            <label class="form-check-label" for="breed_mix">Mistura de raças</label>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="main_question">
+                    <label>Conte sobre onde você conseguiu o cachorro (Abrigo, conhecido, loja de
+                        animais, etc).</label>
+                </div>
+                <div class="main_answer_box">
+                    <div class="wave-group">
+                        <input required id="whereGot" name="whereGot" type="text" class="input">
+                        <span class="bar"></span>
+                    </div>
+                </div>
+                <div class="main_question">
+                    <label for="payed">Você pagou para adquirir o cachorro?</label>
+                </div>
+                <div class="main_answer_box">
+                    <div class="radio-container">
+                        <label class="container" for="payed_yes">
+                            <input class="form-check-input" type="radio" name="payed" id="payed_yes" value="Sim">
+                            <label class="form-check-label" for="payed_yes">Sim</label>
+                        </label>
+                        <label class="container" for="payed_no">
+                            <input class="form-check-input" type="radio" name="payed" id="payed_no" value="Não">
+                            <label class="form-check-label" for="payed_no">Não</label>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="main_question">
+                    <label>Qual idade o cachorro tinha quando você o pegou?</label>
+                </div>
+                <div class="main_answer_box">
+                    <div class="wave-group">
+                        <input required id="ageGot" name="ageGot" type="number" min="1" max="100" class="input">
+                        <span class="bar"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Página 3 -->
+            <div id="page-3" class="form-page">
+                <div class="main_question">
+                    <label>Como você descreveria a personalidade do seu cachorro?</label>
+                </div>
+                <div class="main_answer_box">
+                    <div class="wave-group">
+                        <input required id="dogPersonality" name="dogPersonality" type="text" class="input">
+                        <span class="bar"></span>
+                    </div>
+                </div>
+            
+                <div class="main_question">
+                    <label>Porque você tem esse cachorro?</label>
+                </div>
+                <div class="main_answer_box">
+                    <div class="radio-container">
+                        <label class="container" for="whyDog_1">
+                            <input class="form-check-input" type="checkbox" id="whyDog_1" name="whyDog" value="Companhia para crianças">
+                            <label class="form-check-label" for="whyDog_1">Companhia para crianças</label>
+                        </label>
+                        <label class="container" for="whyDog_2">
+                            <input class="form-check-input" type="checkbox" id="whyDog_2" name="whyDog" value="Acompanhamento para adulto(s)">
+                            <label class="form-check-label" for="whyDog_2">Acompanhamento para adulto(s)</label>
+                        </label>
+                        <label class="container" for="whyDog_3">
+                            <input class="form-check-input" type="checkbox" id="whyDog_3" name="whyDog" value="Por sua aparência">
+                            <label class="form-check-label" for="whyDog_3">Por sua aparência</label>
+                        </label>
+                        <label class="container" for="whyDog_4">
+                            <input class="form-check-input" type="checkbox" id="whyDog_4" name="whyDog" value="Companhia para um cachorro que já mora na casa">
+                            <label class="form-check-label" for="whyDog_4">Companhia para um cachorro que já mora na casa</label>
+                        </label>
+                        <label class="container" for="whyDog_5">
+                            <input class="form-check-input" type="checkbox" id="whyDog_5" name="whyDog" value="Ensinar responsabilidade às crianças">
+                            <label class="form-check-label" for="whyDog_5">Ensinar responsabilidade às crianças</label>
+                        </label>
+                        <label class="container" for="whyDog_6">
+                            <input class="form-check-input" type="checkbox" id="whyDog_6" name="whyDog" value="Porque amigos já tinham">
+                            <label class="form-check-label" for="whyDog_6">Porque amigos já tinham</label>
+                        </label>
+                        <label class="container" for="whyDog_7">
+                            <input class="form-check-input" type="checkbox" id="whyDog_7" name="whyDog" value="Para proteção da residência, de pessoas">
+                            <label class="form-check-label" for="whyDog_7">Para proteção da residência, de pessoas</label>
+                        </label>
+                        <label class="container" for="whyDog_8">
+                            <input class="form-check-input" type="checkbox" id="whyDog_8" name="whyDog" value="Para ajudar um amigo/conhecido que não conseguiu ficar com o cachorro">
+                            <label class="form-check-label" for="whyDog_8">Para ajudar um amigo/conhecido que não conseguiu ficar com o cachorro</label>
+                        </label>
+                        <label class="container" for="whyDog_9">
+                            <input class="form-check-input" type="checkbox" id="whyDog_9" name="whyDog" value="Para salvar sua vida">
+                            <label class="form-check-label" for="whyDog_9">Para salvar sua vida</label>
+                        </label>
+                        <label class="container" for="whyDog_10">
+                            <input class="form-check-input" type="checkbox" id="whyDog_10" name="whyDog" value="Ele/ela era fofo e estava disponível ou foi um encantamento imediato">
+                            <label class="form-check-label" for="whyDog_10">Ele/ela era fofo e estava disponível ou foi um encantamento imediato</label>
+                        </label>
+                        <label class="container" for="whyDog_11">
+                            <input class="form-check-input" type="checkbox" id="whyDog_11" name="whyDog" value="Ele me escolheu">
+                            <label class="form-check-label" for="whyDog_11">Ele me escolheu</label>
+                        </label>
+                        <label class="container" for="whyDog_12">
+                            <input class="form-check-input" type="checkbox" id="whyDog_12" name="whyDog" value="Ele/ela foi um presente">
+                            <label class="form-check-label" for="whyDog_12">Ele/ela foi um presente</label>
+                        </label>
+                    </div>
+                </div>
+            
+                <div class="main_question">
+                    <label>Caso você tenha outros motivos, descreva:</label>
+                </div>
+                <div class="main_answer_box">
+                    <div class="wave-group">
+                        <input required id="otherReasons" name="otherReasons" type="text" class="input">
+                        <span class="bar"></span>
+                    </div>
+                </div>
+            
+                <div class="main_question">
+                    <label>Quem esteve presente na decisão de pegar o cachorro</label>
+                </div>
+                <div class="main_answer_box">
+                    <div class="wave-group">
+                        <input required id="involvedPeople" name="involvedPeople" type="text" class="input">
+                        <span class="bar"></span>
+                    </div>
+                </div>
+            </div>            
+
+            <!-- Página 4 -->
+            <div id="page-4" class="form-page">
+                <div class="main_question">
+                    <label>Você já teve um cão que não conseguiu manter em casa? Descreva a situação.</label>
+                </div>
+                <div class="main_answer_box">
+                    <div class="wave-group">
+                        <input required id="cant_keep" name="cant_keep" type="text" class="input">
+                        <span class="bar"></span>
+                    </div>
+                </div>
+            
+                <div class="main_question">
+                    <label>Você levou o cachorro ao veterinário no último ano?</label>
+                </div>
+                <div class="main_answer_box">
+                    <div class="radio-container">
+                        <label class="container" for="vetLastYear_yes">
+                            <input class="form-check-input" type="radio" name="vetLastYear" id="vetLastYear_yes" value="Sim">
+                <label class="form-check-label" for="vetLastYear_yes">Sim</label>
+                        </label>
+                        <label class="container" for="vetLastYear_no">
+                            <input class="form-check-input" type="radio" name="vetLastYear" id="vetLastYear_no" value="Não">
+                            <label class="form-check-label" for="vetLastYear_no">Não</label>
+                        </label>
+                    </div>
+                </div>
+            
+                <div class="main_question">
+                    <label>Quantas vezes já levou o cão ao veterinário?</label>
+                </div>
+                <div class="main_answer_box">
+                    <div class="wave-group">
+                        <input required id="vetVisits" name="vetVisits" type="number" min="1" max="100" class="input">
+                        <span class="bar"></span>
+                    </div>
+                </div>
+            
+                <div class="main_question">
+                    <label>Se outra pessoa fosse adotar o seu cachorro, o que você diria sobre ele?</label>
+                </div>
+                <div class="main_answer_box">
+                    <div class="wave-group">
+                        <input required id="aboutDog" name="aboutDog" type="text" class="input">
+                        <span class="bar"></span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="btn-group">
+                <button type="button" id="prevBtn" class="btn btn-secondary" style="border-radius: 14px;">Anterior</button>
+                <button type="button" id="nextBtn" class="btn btn-primary" style="border-radius: 14px;">Próximo</button>
+                <button type="submit" id="okBtn" class="btn btn-success" style="display:none; border-radius: 14px;">Enviar</button>
+            </div>
+            
+        </form>
+    </div>
+
+    <script>
+        // Funções para mudança de página
+        let currentPage = 0;
+        const pages = document.querySelectorAll('.form-page');
+
+        function showPage(pageIndex) {
+            pages.forEach((page, index) => {
+                page.classList.toggle('active', index === pageIndex);
+            });
+            prevBtn.style.display = pageIndex === 0 ? 'none' : 'inline-block';
+            nextBtn.style.display = pageIndex === pages.length - 1 ? 'none' : 'inline-block';
+            okBtn.style.display = pageIndex === pages.length - 1 ? 'inline-block' : 'none';
+        }
+
+        function changePage(direction) {
+            if (currentPage + direction >= 0 && currentPage + direction < pages.length) {
+                currentPage += direction;
+                showPage(currentPage);
+            }
+        }
+
+        document.getElementById('prevBtn').addEventListener('click', () => {
+            changePage(-1);
+        });
+
+        document.getElementById('nextBtn').addEventListener('click', () => {
+            changePage(1);
+        });
+
+        // Funções que auxiliam coletar os valores coletados dos usuários
+        var selected;
+        function radioSave(name) {
+            let options = document.getElementsByName(name);
+            for (let i = 0; i < options.length; i++) {
+                if (options[i].checked) {
+                    selected = options[i].value;
+                    break;
+                }
+            }
+            return selected;
+        }
+
+        function booleanSave(name) {
+            return radioSave(name) === "Sim";
+        }
+
+        var chose = [];
+        function checkboxSave(name) {
+            let options = document.getElementsByName(name);
+            for (let i = 0; i < options.length; i++) {
+                if (options[i].checked) {
+                    chose[i] = true;
+                } else {
+                    chose[i] = false;
+                }
+            }
+        }
+
+        // Evento para o envio do formulário
+        document.getElementById('pet-form').addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            const name = document.getElementById('dogName').value;
+            const gender = radioSave('dogGender');
+            const owner = document.getElementById('ownership').value;
+            const neutered = radioSave('neutered');
+            const how_long = document.getElementById('howLong').value;
+            const is_first = booleanSave('isFirstDog');
+            const other_pets = radioSave('otherPets');
+            const dog_age = radioSave('dogAge');
+            const breed = radioSave('breed');
+            const where_got = document.getElementById('whereGot').value;
+            const payed = booleanSave('payed');
+            const age_got = document.getElementById('ageGot').value;
+            const dog_personality = document.getElementById('dogPersonality').value;
+            const other_reasons = document.getElementById('otherReasons').value;
+            const involved_people = document.getElementById('involvedPeople').value;
+            const cant_keep_description = document.getElementById('cant_keep').value;
+            const veterinary_last_years = booleanSave('vetLastYear');
+            const vetVisits = document.getElementById('vetVisits').value;
+            const about = document.getElementById('aboutDog').value;
+
+            checkboxSave('whyDog');
+
+            try {
+                var idWhyDog;
+                // Envia a requisição para o backend relacionado à tabela Why Dog
+                const response = await fetch('/whyDog', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        Authentication: localStorage.getItem('user')
+                    },
+                    body: JSON.stringify({
+                        id: 's',
+                        child_company: chose[0],
+                        adult_company: chose[1],
+                        appearance: chose[2],
+                        dog_company: chose[3],
+                        teach_responsibility: chose[4],
+                        friends: chose[5],
+                        protection: chose[6],
+                        help_old_owner: chose[7],
+                        save_life: chose[8],
+                        cuteness: chose[9],
+                        he_chose_me: chose[10],
+                        gift: chose[11],
+                        other: chose[12]
+                    })
+                });
+
+                const data = await response.json();
+                console.log(data);
+                idWhyDog = data.id;
+
+            } catch (error) {
+                console.error('Error:', error);
+            }
+
+            try {
+                // Envia a requisição para o backend relacioando à tabela do forms presente
+                const response = await fetch('/has_dog_form', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        Authentication: localStorage.getItem('user')
+                    },
+                    body: JSON.stringify({
+                        id: "x",
+                        name: name,
+                        gender: gender,
+                        owner: owner,
+                        neutered: neutered,
+                        how_long: how_long,
+                        is_first: is_first,
+                        other_pets: other_pets,
+                        dog_age: dog_age,
+                        breed: breed,
+                        where_got: where_got,
+                        payed: payed,
+                        age_got: age_got,
+                        dog_personality: dog_personality,
+                        id_why_dog: idWhyDog,
+                        good_caracteristics: other_reasons,
+                        involved_people: involved_people,
+                        cant_keep_description: cant_keep_description,
+                        veterinary_last_years: veterinary_last_years,
+                        vetVisits: vetVisits,
+                        about: about,
+                        id_user: "egdwe"
+                    })
+                });
+
+                const data = await response.json();
+                console.log(data);
+
+                window.location.href = '/check'; //redireciona para página final
+
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        });
+
+        showPage(currentPage);
+
+    </script>
+
+</body>
+
+</html>

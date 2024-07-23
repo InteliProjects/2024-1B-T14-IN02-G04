@@ -1,0 +1,117 @@
+<style>
+    body {
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(150deg, #cee2ff 60%, #6f73d2 90%);
+        background-attachment: fixed; /* Fixa a imagem de fundo */
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 80vh;
+        padding: 16px;
+    }
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    .message {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 32px;
+        border-radius: 24px;
+        background-color: #fdf5e6;
+        color: #4246a2;
+        border: 1px groove #6f73d2;
+        box-shadow: -8px 10px 12px rgba(10, 32, 54, 0.25);
+        width: 100%;
+        max-width: 600px;
+    }
+    h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #4246A2;
+        margin-bottom: 24px;
+        text-align: center;
+    }
+    h4 {
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: #4246a2;
+        padding-bottom: 16px;
+        text-align: center;
+    }
+    h5 {
+        font-size: 1.2rem;
+        font-weight: 500;
+        color: #4246a2;
+        text-align: center;
+    }
+    p {
+        font-size: 1rem;
+        font-weight: 600;
+        color: #4246a2;
+        text-align: center;
+    }
+    .additional-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 1rem;
+        font-weight: 500;
+        color: #6F73D2;
+        padding: 16px;
+        text-align: center;
+    }
+
+    /* Media Queries */
+    @media (min-width: 768px) {
+        h1 {
+            font-size: 4rem;
+        }
+        h4 {
+            font-size: 2rem;
+        }
+        h5 {
+            font-size: 1.5rem;
+        }
+        p {
+            font-size: 1.2rem;
+        }
+        .additional-content {
+            font-size: 1.2rem;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        p {
+            font-size: 1.8rem;
+        }
+        .additional-content {
+            font-size: 1.5rem;
+        }
+    }
+</style>
+
+<div class="wrapper">
+    <div class="container">
+        <div class="message">
+            <h1>Obrigado por responder!</h1>
+            <h4>Sua resposta foi submetida com sucesso.</h4>
+            <h5>Agradecemos pela colaboração!</h5>
+        </div>
+    </div>
+</div>
+
+<div class="additional-content">
+    <p>Seu feedback é muito importante para nós.</p>
+    <p>Continue acompanhando nosso site para mais novidades.</p>
+</div>  

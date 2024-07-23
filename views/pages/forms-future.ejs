@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/styles/forms-future.css" rel="stylesheet" />
+    <title>Formulário Futuro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(150deg, #6f73d2 50%, #ffffff 100%);
+            background-attachment: fixed;
+        }
+
+        .main {
+            max-width: 600px;
+            margin: 40px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-page {
+            display: none;
+        }
+
+        .form-page.active {
+            display: block;
+        }
+
+        .main_answer_box {
+            margin-bottom: 20px;
+        }
+
+        .input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .main_footer {
+            display: flex;
+            justify-content: right;
+            align-items: center;
+            margin-top: 20px;
+            flex-direction: column;
+        }
+
+        .btn-group {
+            display: flex;
+            justify-content:left;
+            gap: 10px; 
+        }
+    </style>
+</head>
+
+<body>
+    <div class="progress" role="progressbar" aria-label="Progress" aria-valuenow="25" aria-valuemin="0"
+        aria-valuemax="100" style="height: 5px">
+        <div class="progress-bar" style="width: 50%"></div>
+    </div>
+
+    <div class="main">
+        <div class="main_alert">
+            <div class="alert alert-primary" role="alert">
+                Atenção! Essa seção do formulário é para pessoas que nunca conviveram, mas querem conviver com cães.
+            </div>
+        </div>
+
+        <form id="future-form">
+            <!-- Página 1 -->
+            <div id="page-1" class="form-page active">
+                <div class="main_question">
+                    <h3>Quais são as características físicas do cão que você imagina conviver?</h3>
+                </div>
+                <br>
+                <label for="dog_size">Tamanho:</label>
+                <div class="main_answer_box">
+                    <div class="wave-group">
+                        <select required id="dog_size" name="dog_size" class="input">
+                            <option value="">Selecione</option>
+                            <option value="Pequeno">Pequeno</option>
+                            <option value="Médio">Médio</option>
+                            <option value="Grande">Grande</option>
+                        </select>
+                    </div>
+                </div>
+                <br>
+                <label for="fur">Pelagem:</label>
+                <div class="main_answer_box">
+                    <div class="wave-group">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="pelagem" id="curto" value="Curta">
+                            <label class="form-check-label" for="curto">Curta</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="pelagem" id="longo" value="Longa">
+                            <label class="form-check-label" for="longo">Longa</label>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <label for="color_preference">Preferência por Cor:</label>
+                <div class="main_answer_box">
+                    <div class="wave-group">
+                        <input required id="color_preference" name="color_preference" type="text" class="input">
+                        <span class="bar"></span>
+                    </div>
+                </div>
+                <br>
+                <label for="gender">Sexo:</label>
+                <div class="main_answer_box">
+                    <div class="wave-group">
+                        <select required id="gender" name="gender" class="input">
+                            <option value="">Selecione</option>
+                            <option value="Macho">Macho</option>
+                            <option value="Fêmea">Fêmea</option>
+                        </select>
+                    </div>
+                </div>
+                <br>
+                <label for="age">Idade:</label>
+                <div class="main_answer_box">
+                    <div class="wave-group">
+                        <input required id="age" name="age" type="text" class="input">
+                        <span class="bar"></span>
+                    </div>
+                </div>
+                <br>
+                <label for="breed">De Raça:</label>
+                <div class="main_answer_box">
+                    <div class="wave-group">
+                        <select required id="breed" name="breed" class="input">
+                            <option value="">Selecione</option>
+                            <option value="Sim">Sim</option>
+                            <option value="Sem Raça Definida">Sem Raça Definida</option>
+                            <option value="Não sei">Não sei</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Página 2 -->
+            <div id="page-2" class="form-page">
+                <div class="main_question">
+                    <h3>Por que você gostaria de conviver com um cão?</h3>
+                </div>
+                <br>
+                <label for="why_have_dog">Motivo:</label>
+                <div class="main_answer_box">
+                    <div class="wave-group">
+                        <input type="checkbox" id="child_company" value="Companhia para crianças">Companhia para crianças</input><br>
+                        <input type="checkbox" id="adult_company" value="Acompanhamento para adulto(s)">Acompanhamento para adulto(s)</input><br>
+                        <input type="checkbox" id="parents_had" value="Seus pais tinham/tem">Seus pais tinham/tem</input><br>
+                        <input type="checkbox" id="teach_responsibility" value="Ensinar responsabilidade às crianças">Ensinar responsabilidade às crianças</input><br>
+                        <input type="checkbox" id="friends_have" value="Porque amigos já tem">Porque amigos já tem</input><br>
+                        <input type="checkbox" id="protection" value="Para proteção da residência, de pessoas">Para proteção da residência, de pessoas</input><br>
+                        <input type="checkbox" id="tv" value="Conheceu na TV, filmes, mídias sociais">Conheceu na TV, filmes, mídias sociais</input><br>
+                        <input type="checkbox" id="other_reason" value="Outros">Outros</input>
+                    </div>
+                </div>
+                <br>
+                <label for="other_reason">Descreva outros motivos:</label>
+                <div class="main_answer_box">
+                    <div class="wave-group">
+                        <input id="other_reason" name="other_reason" type="text" class="input">
+                        <span class="bar"></span>
+                    </div>
+                </div>
+                <br>
+                <label for="name_dog">Você já pensou em um nome para ele/ela?</label>
+                <div class="main_answer_box">
+                    <div class="wave-group">
+                        <select required id="name_dog" name="name_dog" class="input">
+                            <option value="">Selecione</option>
+                            <option value="Sim">Sim</option>
+                            <option value="Não">Não</option>
+                        </select>
+                    </div>
+                </div>
+                <br>
+                <label for="dog_name">Qual o nome?</label>
+                <div class="main_answer_box">
+                    <div class="wave-group">
+                        <input id="dog_name" name="dog_name" type="text" class="input">
+                        <span class="bar"></span>
+                    </div>
+                </div>
+                <br>
+                <label for="name_reason">Qual o motivo para a escolha do nome?</label>
+                <div class="main_answer_box">
+                    <div class="wave-group">
+                        <input id="name_reason" name="name_reason" type="text" class="input">
+                        <span class="bar"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Página 3 -->
+            <div id="page-3" class="form-page">
+                
+                <div class="main_question">
+                    <h3>Informações adicionais sobre a adoção/compra</h3>
+                </div>
+                <br>
+                <label for="adopt_buy">Pretende:</label>
+                <div class="main_answer_box">
+                    <div class="wave-group">
+                        <select required id="adopt_buy" name="adopt_buy" class="input">
+                            <option value="">Selecione</option>
+                            <option value="Comprar">Comprar</option>
+                            <option value="Adotar">Adotar</option>
+                        </select>
+                    </div>
+                </div>
+                <br>
+                <label for="when_include">Já sabe quando irá incluir ela/ele em sua casa?</label>
+                <div class="main_answer_box">
+                    <div class="wave-group">
+                        <input required id="when_include" name="when_include" type="text" class="input">
+                        <span class="bar"></span>
+                    </div>
+                </div>
+                <br>
+                <label for="expected_personality">Gostaria que tivesse qual tipo de personalidade/comportamento?</label>
+                <div class="main_answer_box">
+                    <div class="wave-group">
+                        <input required id="expected_personality" name="expected_personality" type="text" class="input">
+                        <span class="bar"></span>
+                    </div>
+                </div>
+                <br>
+                <label for="dog_expenses">Pesquisou sobre a média das despesas mensais com o pet?</label>
+                <div class="main_answer_box">
+                    <div class="wave-group">
+                        <select required id="dog_expenses" name="dog_expenses" class="input">
+                            <option value="">Selecione</option>
+                            <option value="Sim">Sim</option>
+                            <option value="Não">Não</option>
+                        </select>
+                    </div>
+                </div>
+                <br>
+                <label for="dog_expenses_value">Qual o valor estimado?</label>
+                <div class="main_answer_box">
+                    <div class="wave-group">
+                        <input required id="dog_expenses_value" name="dog_expenses_value" type="text" class="input">
+                        <span class="bar"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="btn-group">
+                <button type="button" id="prevBtn" class="btn btn-secondary" style="border-radius: 14px;">Anterior</button>
+                <button type="button" id="nextBtn" class="btn btn-primary" style="border-radius: 14px;">Próximo</button>
+                <button type="submit" id="okBtn" class="btn btn-success" style="display:none; border-radius: 14px;">Enviar</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // Funções para mudança de página
+        let currentPage = 0;
+        const pages = document.querySelectorAll('.form-page');
+        
+        function showPage(page) {
+            pages.forEach((pageElement, index) => {
+                pageElement.classList.toggle('active', index === page);
+            });
+            if (page === pages.length - 1) {
+                document.getElementById('okBtn').style.display = 'block';
+                document.getElementById('nextBtn').style.display = 'none';
+             } else {
+                document.getElementById('okBtn').style.display = 'none';
+                document.getElementById('nextBtn').style.display = 'block';
+            }
+
+        if(page === 0){
+            document.getElementById('prevBtn').style.display = 'none';
+        }
+        else{
+            document.getElementById('prevBtn').style.display = 'block';
+        }
+        }
+
+        function changePage(direction) {
+            if (currentPage + direction >= 0 && currentPage + direction < pages.length) {
+                currentPage += direction;
+                showPage(currentPage);
+            }
+        }
+
+        // Função auxiliar para a integração com o backend
+        function getPelagem(){
+            const pelagens = document.getElementsByName('pelagem');
+            for(let i = 0; i < pelagens.length; i++){
+                if(pelagens[i].checked){
+                    return pelagens[i].value;
+                }
+            }
+        }
+
+        // Adiciona ação aos botões
+        document.getElementById('prevBtn').addEventListener('click', () => {
+            changePage(-1);
+        });
+
+        document.getElementById('nextBtn').addEventListener('click', () => {
+            changePage(1);
+        });
+
+        // Adiciona o evento submit no form
+        document.getElementById('future-form').addEventListener('submit', async (event) => {
+            event.preventDefault(); // Previne o comportamento padrão de envio do formulário ao capturar o evento
+            
+            // Armazena em constantes os valores coletados do usuário
+            const dog_size = document.getElementById('dog_size').value;
+            const fur = getPelagem();
+            const color_preference = document.getElementById('color_preference').value;
+            const gender = document.getElementById('gender').value;
+            const age = document.getElementById('age').value;
+            const breed = document.getElementById('breed').value;
+            const name = document.getElementById('dog_name').value;
+            const why_name = document.getElementById('name_reason').value;
+            const buy_or_adopt = document.getElementById('adopt_buy').value;
+            const when_include = document.getElementById('when_include').value;
+            const expected_personality = document.getElementById('expected_personality').value;
+            const dog_expenses = document.getElementById('dog_expenses').value;
+            const dog_expenses_value = document.getElementById('dog_expenses_value').value;
+            var idWhyHaveDog;
+            try{
+                // Envia a requisição para registrar a tabela whyHaveDog
+                const r = await fetch('/whyHaveDog/create', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        authorization: localStorage.getItem('user')
+                    },
+                    body: JSON.stringify({
+                        id: "x",
+                        child_company: document.getElementById('child_company').checked,
+                        adult_company: document.getElementById('adult_company').checked,
+                        parents_had: document.getElementById('parents_had').checked,
+                        teach_responsibility: document.getElementById('teach_responsibility').checked,
+                        friends_have: document.getElementById('friends_have').checked,
+                        protection: document.getElementById('protection').checked,
+                        tv: document.getElementById('tv').checked,
+                        other: document.getElementById('other_reason').value
+                    })
+                });
+
+                const d = await r.json();
+                idWhyHaveDog = d.id;
+            }catch(err){
+                console.log(err);
+            }
+
+            try {
+                // Envia a requisição para registrar as respostas
+                const response = await fetch('/neverHadForm', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        Authorization: localStorage.getItem('user')
+                    },
+                    body: JSON.stringify({ 
+                        id: "x",
+                        dog_size: dog_size,
+                        fur: fur,
+                        color_preference: color_preference,
+                        gender: gender,
+                        age: age,
+                        breed: breed,
+                        name: name,
+                        why_name: why_name,
+                        buy_or_adopt: buy_or_adopt,
+                        when_include: when_include,
+                        expected_personality: expected_personality,
+                        dog_expenses: dog_expenses,
+                        dog_expenses_value: dog_expenses_value,
+                        id_why_have_dog: idWhyHaveDog
+                    })
+                });
+
+                const data = await response.json();
+                console.log(data);
+
+                if (response.ok) {
+                    window.location.href = '/check';
+                } else {
+                    console.error('Error:', data);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        });
+
+        showPage(currentPage);
+    </script>
+</body>
+
+</html>
